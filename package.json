@@ -1,0 +1,19 @@
+{
+  "name": "capital-flycasting",
+  "version": "0.0.1",
+  "description": "Capital Flycasting website",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrea Crawford",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^5.0.0"
+  }
+}
