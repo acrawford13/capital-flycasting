@@ -1,0 +1,8 @@
+{% set visible_pages = page.collection({items: '@root.children'}).visible() %}
+{% set modified_date = visible_pages|first.modified %}
+{% for page in visible_pages %}
+    {% if modified_date < page.modified %}
+        {% set modified_date = page.modified %}
+    {% endif %}
+{% endfor %}
+&copy; Lyall Crawford | {{ modified_date|date('F Y') }}

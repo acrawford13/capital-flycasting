@@ -1,3 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700');
+
+// VARIABLES
+// color variables
+$brown: #795548;
+
+// layout variables
+$container-width: 850px;
+
+// typography variables
+$display-font-stack: Lora, serif;
+$body-font-stack: Roboto, sans-serif;
+
+// header variables
+$header-title-color: $brown;
+$header-title-size: 2rem;
+$header-padding: 1rem;
+$header-color: #f5f5f5;
+
+// RULES
+// general rules
 * {
-    color: green;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: $body-font-stack;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: $display-font-stack;
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+}
+
+// header rules
+.header {
+    background-color: $header-color;
+    padding: $header-padding;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        flex: 0 1 $container-width;
+    }
+
+    &__title {
+        font-family: $display-font-stack;
+        font-weight: bold;
+        color: $header-title-color;
+        font-size: $header-title-size;
+    }
 }

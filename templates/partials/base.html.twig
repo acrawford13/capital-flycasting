@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+        <link href="{{ theme_url }}/css/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="navbar">
+            {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+            {% endblock %}
+        </div>
+        {% block body %}
+        <section id="body" class="container">
+            {% block content %}{% endblock %}
+        </section>
+        {% endblock %}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>
