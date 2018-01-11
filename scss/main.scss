@@ -30,7 +30,7 @@ html, body {
 }
 
 h1 {
-    font-family: $display-font-stack;
+    font-family: $body-font-stack;
 }
 
 .container {
@@ -47,6 +47,8 @@ h1 {
 
     &__container {
         flex: 0 1 $container-width;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__title {
@@ -54,5 +56,23 @@ h1 {
         font-weight: bold;
         color: $header-title-color;
         font-size: $header-title-size;
+    }
+
+    &__menu-list {
+        display: flex;
+        padding: 0;
+    }
+
+    &__menu-item {
+        list-style-type: none;
+    }
+
+    &__menu-link {
+        padding: 0.5rem;
+        text-decoration: none;
+
+        &--active {
+            font-weight: bold;
+        }
     }
 }

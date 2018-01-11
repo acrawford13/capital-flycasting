@@ -1,6 +1,5 @@
-{% set visible_pages = page.collection({items: '@root.children'}).visible() %}
-{% set modified_date = visible_pages|first.modified %}
-{% for page in visible_pages %}
+{% set modified_date = pages.children.visibles|first.modified %}
+{% for page in pages.children.visible %}
     {% if modified_date < page.modified %}
         {% set modified_date = page.modified %}
     {% endif %}
