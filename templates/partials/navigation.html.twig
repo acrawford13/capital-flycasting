@@ -1,13 +1,6 @@
-<header class="header">
-    <div class="header__container">
-        <span class="header__title">{{ site.title|e }}</span>
-        <nav class="header__menu">
-            <ul class="header__menu-list">
-                {% for page in pages.children.visible %}
-                {% set current_page = page.active ? 'header__menu-link--active' : '' %}
-                    <li class="header__menu-item"><a class="header__menu-link {{ current_page }}" href="{{ page.url }}">{{ page.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
-</header>
+<ul class="top-bar__menu-list">
+    {% for page in pages.children.visible %}
+    {% set current_page = page.active ? 'top-bar__menu-link--active' : '' %}
+        <li class="top-bar__menu-item"><a class="top-bar__menu-link {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a></li>
+    {% endfor %}
+</ul>

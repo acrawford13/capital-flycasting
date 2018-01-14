@@ -6,16 +6,21 @@
         <link href="{{ theme_url }}/css/main.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="navbar">
-            {% block header_navigation %}
-            {% include 'partials/navigation.html.twig' %}
-            {% endblock %}
-        </div>
+        {% block header %}
+            <header class="header">
+                {% include 'partials/header.html.twig' %}
+            </header>
+        {% endblock %}
         {% block body %}
         <section id="body" class="container">
             {% block content %}{% endblock %}
         </section>
         {% endblock %}
         {% include 'partials/footer.html.twig' %}
+
+
+        {% block bottom %}
+            {{ assets.js('bottom') }}
+        {% endblock %}
     </body>
 </html>
