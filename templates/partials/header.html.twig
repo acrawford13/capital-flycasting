@@ -1,11 +1,10 @@
-<div class="top-bar">
+<div class="top-bar" style="background-image:url('{{ [theme_url,'/images/wood.png']|join }}')">
     <div class="top-bar__container">
         <span class="top-bar__title">{{ site.title|e }}</span>
+    </div>
+    <div class="top-bar__menu-container">
         <nav class="top-bar__menu">
             {% include 'partials/navigation.html.twig' %}
         </nav>
     </div>
-</div>
-<div>
-    <img class="header__image" src="{{ [theme_url,'/images/headers/',site.site_header]|join }}" />
 </div>

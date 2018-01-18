@@ -4,6 +4,11 @@
         <meta charset="utf-8">
         <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
         <link href="{{ theme_url }}/css/main.css" rel="stylesheet" />
+        {{ assets.css() }}
+        {% block javascripts %}
+            {% do assets.addJs('jquery', 101) %}
+        {% endblock %}
+        {{ assets.js() }}
     </head>
     <body>
         {% block header %}
@@ -11,8 +16,10 @@
                 {% include 'partials/header.html.twig' %}
             </header>
         {% endblock %}
+        {% block header_image %}
+        {% endblock %}
         {% block body %}
-        <section id="body" class="container">
+        <section id="body" class="content container">
             {% block content %}{% endblock %}
         </section>
         {% endblock %}

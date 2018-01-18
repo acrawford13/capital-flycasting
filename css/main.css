@@ -1,14 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Lora:400,400i,700|Pragati+Narrow:400,700");
+@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash");
 * {
   box-sizing: border-box; }
 
 html, body {
-  font-family: Roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0; }
 
 h1 {
-  font-family: Roboto, sans-serif; }
+  font-family: "Roboto", sans-serif; }
+
+.content {
+  color: #ddd; }
 
 .container {
   max-width: 850px;
@@ -16,34 +20,58 @@ h1 {
 
 .top-bar {
   background-color: transparent;
-  padding: 1rem;
+  background-size: 200px;
+  background-repeat: repeat-x;
+  padding: 1rem 0 0 0;
   position: fixed;
+  top: 0;
   width: 100%;
-  display: flex;
-  justify-content: center; }
+  box-shadow: 0 0 50px black; }
   .top-bar__container {
-    flex: 0 1 850px;
-    display: flex;
-    justify-content: space-between; }
+    max-width: 850px;
+    margin: 0 auto;
+    margin-bottom: 1rem; }
   .top-bar__title {
-    font-family: Lora, serif;
+    font-family: 'Berkshire Swash';
     font-weight: bold;
-    color: #ccc;
+    color: #fafafa;
     font-size: 2rem; }
+  .top-bar__menu-container {
+    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.2) 30%); }
+  .top-bar__menu {
+    max-width: 850px;
+    margin: 0 auto; }
   .top-bar__menu-list {
     display: flex;
-    padding: 0; }
+    padding: 0.35rem 0 0.25rem;
+    margin: 0; }
   .top-bar__menu-item {
     list-style-type: none; }
+    .top-bar__menu-item:first-child {
+      border: none; }
   .top-bar__menu-link {
-    color: #ccc;
-    padding: 0.5rem;
-    text-decoration: none; }
+    color: #fafafa;
+    padding: 0 0.75rem;
+    text-decoration: none;
+    text-shadow: 0 -1px 2px black;
+    font-family: Lora, serif;
+    font-family: 'Pragati Narrow', serif;
+    font-size: 1.25rem; }
     .top-bar__menu-link--active {
-      font-weight: bold; }
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); }
 
-.header__image {
-  max-width: 100%; }
+body {
+  background-image: url("../images/dark_wood_@2X.png");
+  background-size: 400px; }
+
+.header-image {
+  height: 70vh;
+  background-size: cover;
+  background-position: 50% 40%;
+  margin-top: 6rem; }
 
 .footer {
   max-width: 850px;
