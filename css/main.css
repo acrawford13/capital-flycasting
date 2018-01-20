@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Lora:400,400i,700|Pragati+Narrow:400,700");
 @import url("https://fonts.googleapis.com/css?family=Berkshire+Swash");
+@import url("https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps");
 * {
   box-sizing: border-box; }
 
@@ -18,12 +19,59 @@ h1 {
   max-width: 850px;
   margin: 0 auto; }
 
+.header {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: auto; }
+  .header__title {
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 4rem;
+    line-height: 1.1;
+    max-width: 850px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 50px black; }
+  .header__container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; }
+  .header__text {
+    position: fixed;
+    top: 20%;
+    transform: translate(0, -50%);
+    width: 100%;
+    left: 0; }
+  .header__menu {
+    background-color: orange;
+    padding: 0.5rem 0;
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5); }
+  .header__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0; }
+  .header__menu-item {
+    list-style-type: none; }
+    .header__menu-item:first-child {
+      border: none; }
+  .header__menu-link {
+    color: #fafafa;
+    padding: 0 0.75rem;
+    text-decoration: none;
+    font-family: Lora, serif;
+    font-family: 'Roboto Condensed', serif; }
+
 .top-bar {
   background-color: transparent;
   background-size: 200px;
   background-repeat: repeat-x;
   padding: 1rem 0 0 0;
-  position: fixed;
   top: 0;
   width: 100%;
   box-shadow: 0 0 50px black; }
@@ -66,12 +114,6 @@ h1 {
 body {
   background-image: url("../images/dark_wood_@2X.png");
   background-size: 400px; }
-
-.header-image {
-  height: 70vh;
-  background-size: cover;
-  background-position: 50% 40%;
-  margin-top: 6rem; }
 
 .footer {
   max-width: 850px;

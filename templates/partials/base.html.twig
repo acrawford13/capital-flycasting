@@ -11,12 +11,12 @@
         {{ assets.js() }}
     </head>
     <body>
+        {% block header_image %}
+        {% endblock %}
         {% block header %}
             <header class="header">
                 {% include 'partials/header.html.twig' %}
             </header>
-        {% endblock %}
-        {% block header_image %}
         {% endblock %}
         {% block body %}
         <section id="body" class="content container">

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Lora:400,400i,700|Pragati+Narrow:400,700');
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+@import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps');
 
 // VARIABLES
 // color variables
@@ -44,12 +45,77 @@ h1 {
     margin: 0 auto;
 }
 
+.header {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    overflow: auto;
+
+    &__title {
+        font-family: 'Bilbo Swash Caps', cursive;
+        font-weight: bold;
+        color: $header-title-color;
+        font-size: 4rem;
+        line-height: 1.1;
+        max-width: $container-width;
+        margin: 0 auto;
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 50px black;
+    }
+
+    &__container {
+        max-width: $container-width;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+    }
+
+    &__text {
+        position: fixed;
+        top: 20%;
+        transform: translate(0, -50%);
+        width: 100%;
+        left: 0;
+    }
+
+    &__menu {
+        background-color: orange;
+        padding: 0.5rem 0;
+        box-shadow: inset 0 0 25px rgba(0,0,0,0.5);
+    }
+
+    &__menu-list {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: $container-width;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    &__menu-item {
+        list-style-type: none;
+
+        &:first-child {
+            border: none;
+        }
+    }
+
+    &__menu-link {
+        color: $header-title-color;
+        padding: 0 0.75rem;
+        text-decoration: none;
+        font-family: $display-font-stack;
+        font-family: 'Roboto Condensed', serif;
+    }
+}
+
 .top-bar {
     background-color: $header-color;
     background-size: 200px;
     background-repeat: repeat-x;
     padding: $header-padding;
-    position: fixed;
+    // position: fixed;
     top: 0;
     width: 100%;
     box-shadow: 0 0 50px black;
@@ -118,13 +184,6 @@ h1 {
 body {
     background-image: url('../images/dark_wood_@2X.png');
     background-size: 400px;
-}
-
-.header-image {
-    height: 70vh;
-    background-size: cover;
-    background-position: 50% 40%;
-    margin-top: 6rem;
 }
 
 .footer {
