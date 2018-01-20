@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Lora:400,400i,700|Pragati+Narrow:400,700");
 @import url("https://fonts.googleapis.com/css?family=Berkshire+Swash");
 @import url("https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps");
+@import url("https://fonts.googleapis.com/css?family=Caveat:400,700");
 * {
   box-sizing: border-box; }
+
+::selection {
+  background-color: orange;
+  color: #fafafa; }
 
 html, body {
   font-family: "Roboto", sans-serif;
@@ -20,86 +25,98 @@ h1 {
   margin: 0 auto; }
 
 .header {
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-size: cover;
   background-position: center;
-  overflow: auto; }
-  .header__title {
-    font-family: 'Bilbo Swash Caps', cursive;
-    font-weight: bold;
-    color: #fafafa;
-    font-size: 4rem;
-    line-height: 1.1;
-    max-width: 850px;
-    margin: 0 auto;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 50px black; }
-  .header__container {
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative; }
-  .header__text {
-    position: fixed;
-    top: 20%;
-    transform: translate(0, -50%);
-    width: 100%;
-    left: 0; }
-  .header__menu {
-    background-color: orange;
-    padding: 0.5rem 0;
-    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5); }
-  .header__menu-list {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 0; }
-  .header__menu-item {
-    list-style-type: none; }
-    .header__menu-item:first-child {
-      border: none; }
-  .header__menu-link {
-    color: #fafafa;
-    padding: 0 0.75rem;
-    text-decoration: none;
-    font-family: Lora, serif;
-    font-family: 'Roboto Condensed', serif; }
+  position: relative; }
+
+.header-image {
+  flex: 1 0 250px;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin-bottom: 2rem; }
+
+h2 {
+  margin: 0; }
+
+.photo {
+  border: 6px solid white;
+  box-shadow: 0 0 50px black;
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+  .photo--left {
+    transform: rotate(-2deg);
+    float: left;
+    margin-right: 1rem; }
+  .photo--right {
+    transform: rotate(2deg);
+    float: right;
+    margin-left: 1rem; }
+  .photo__image {
+    max-width: 100%; }
+  .photo__caption {
+    color: #444;
+    font-family: Caveat, script;
+    line-height: 1;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem; }
+
+.content__section--image + .content__section--image::after, .content__section--image:last-child::after {
+  content: '';
+  display: table;
+  clear: both; }
 
 .top-bar {
   background-color: transparent;
   background-size: 200px;
-  background-repeat: repeat-x;
+  background-repeat: repeat;
   padding: 1rem 0 0 0;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 0 50px black; }
+  position: relative;
+  overflow: hidden; }
+  .top-bar::after {
+    content: '';
+    top: 0;
+    bottom: -2rem;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: block;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+    pointer-events: none; }
   .top-bar__container {
     max-width: 850px;
     margin: 0 auto;
     margin-bottom: 1rem; }
   .top-bar__title {
-    font-family: 'Berkshire Swash';
+    font-family: "Bilbo Swash Caps", sans-serif;
     font-weight: bold;
-    color: #fafafa;
-    font-size: 2rem; }
+    color: #eee;
+    font-size: 4rem; }
   .top-bar__menu-container {
-    background: rgba(0, 0, 0, 0.3);
-    background: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.2) 30%); }
+    background: rgba(0, 0, 0, 0.3), url("../images/wood_vertical.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.2) 30%), url("../images/wood_vertical.png");
+    background-size: auto, 150px; }
   .top-bar__menu {
     max-width: 850px;
     margin: 0 auto; }
   .top-bar__menu-list {
     display: flex;
     padding: 0.35rem 0 0.25rem;
-    margin: 0; }
+    margin: 0;
+    flex-wrap: wrap; }
   .top-bar__menu-item {
-    list-style-type: none; }
+    list-style-type: none;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem; }
     .top-bar__menu-item:first-child {
       border: none; }
   .top-bar__menu-link {
-    color: #fafafa;
+    color: #eee;
     padding: 0 0.75rem;
     text-decoration: none;
     text-shadow: 0 -1px 2px black;
@@ -107,9 +124,10 @@ h1 {
     font-family: 'Pragati Narrow', serif;
     font-size: 1.25rem; }
     .top-bar__menu-link--active {
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(0, 0, 0, 0.3);
       border-radius: 0.5rem;
-      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); }
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      color: #fff; }
 
 body {
   background-image: url("../images/dark_wood_@2X.png");
@@ -117,4 +135,9 @@ body {
 
 .footer {
   max-width: 850px;
-  margin: 0 auto; }
+  margin: 1rem auto 0;
+  color: #ddd;
+  border-top: 0.5px solid rgba(221, 221, 221, 0.5);
+  padding: 1rem 0;
+  opacity: 0.8;
+  font-size: 0.9rem; }

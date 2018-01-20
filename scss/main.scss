@@ -1,29 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Lora:400,400i,700|Pragati+Narrow:400,700');
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
 @import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps');
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700');
 
 // VARIABLES
 // color variables
 $brown: #795548;
 $white: #fafafa;
+$lightgrey: #eee;
+$lightishgrey: #ddd;
+$darkbrown: #4e0606;
+$darkgrey: #444;
 
 // layout variables
 $container-width: 850px;
 
 // typography variables
 $display-font-stack: Lora, serif;
+$caption-font-stack: Caveat, script;
 $body-font-stack: 'Roboto', sans-serif;
+$small-text: 0.9rem;
+
+$body-text-color: $lightishgrey;
 
 // header variables
-$header-title-color: $white;
-$header-title-size: 2rem;
+$header-title-color: $lightgrey;
+$header-title-size: 4rem;
 $header-padding: 1rem 0 0 0;
 $header-color: rgba(0,0,0,0);
+$header-font-stack: 'Bilbo Swash Caps', sans-serif;
+
+// footer variables
+$footer-text-size: $small-text;
+
+// general variables
+$highlight-color: orange;
 
 // RULES
 // general rules
 * {
     box-sizing: border-box;
+}
+
+::selection {
+    background-color: $highlight-color;
+    color: $white;
 }
 
 html, body {
@@ -37,7 +58,7 @@ h1 {
 }
 
 .content {
-    color: #ddd;
+    color: $body-text-color;
 }
 
 .container {
@@ -46,79 +67,144 @@ h1 {
 }
 
 .header {
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-size: cover;
     background-position: center;
-    overflow: auto;
+    position: relative;
+    //
+    // &__title {
+    //     font-family: 'Bilbo Swash Caps', cursive;
+    //     font-weight: bold;
+    //     color: $header-title-color;
+    //     font-size: 4rem;
+    //     line-height: 1.1;
+    //     max-width: $container-width;
+    //     margin: 0 auto;
+    //     margin-top: 4rem;
+    //     margin-bottom: 1rem;
+    //     text-shadow: 0 0 50px black;
+    // }
+    //
+    // &__container {
+    //     max-width: $container-width;
+    //     margin: 0 auto;
+    //     text-align: center;
+    //     position: relative;
+    // }
+    //
+    // &__text {
+    //     position: fixed;
+    //     top: 20%;
+    //     transform: translate(0, -50%);
+    //     width: 100%;
+    //     left: 0;
+    // }
+    //
+    // &__menu {
+    //     background-color: orange;
+    //     padding: 0.5rem 0;
+    //     box-shadow: inset 0 0 25px rgba(0,0,0,0.5);
+    // }
+    //
+    // &__menu-list {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     max-width: $container-width;
+    //     margin: 0 auto;
+    //     padding: 0;
+    // }
+    //
+    // &__menu-item {
+    //     list-style-type: none;
+    //
+    //     &:first-child {
+    //         border: none;
+    //     }
+    // }
+    //
+    // &__menu-link {
+    //     color: $header-title-color;
+    //     padding: 0 0.75rem;
+    //     text-decoration: none;
+    //     font-family: $display-font-stack;
+    //     font-family: 'Roboto Condensed', serif;
+    // }
+}
 
-    &__title {
-        font-family: 'Bilbo Swash Caps', cursive;
-        font-weight: bold;
-        color: $header-title-color;
-        font-size: 4rem;
-        line-height: 1.1;
-        max-width: $container-width;
-        margin: 0 auto;
-        margin-top: 4rem;
-        margin-bottom: 1rem;
-        text-shadow: 0 0 50px black;
+.header-image {
+    flex: 1 0 250px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin: 0;
+}
+
+.photo {
+    border: 6px solid white;
+    box-shadow: 0 0 50px black;
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &--left {
+        transform: rotate(-2deg);
+        float: left;
+        margin-right: 1rem;
     }
 
-    &__container {
-        max-width: $container-width;
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
+    &--right {
+        transform: rotate(2deg);
+        float: right;
+        margin-left: 1rem;
     }
 
-    &__text {
-        position: fixed;
-        top: 20%;
-        transform: translate(0, -50%);
-        width: 100%;
-        left: 0;
+    &__image {
+        max-width: 100%;
     }
 
-    &__menu {
-        background-color: orange;
-        padding: 0.5rem 0;
-        box-shadow: inset 0 0 25px rgba(0,0,0,0.5);
+    &__caption {
+        color: $darkgrey;
+        font-family: $caption-font-stack;
+        line-height: 1;
+        display: inline-block;
+        font-size: 1.1rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
     }
+}
 
-    &__menu-list {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: $container-width;
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    &__menu-item {
-        list-style-type: none;
-
-        &:first-child {
-            border: none;
-        }
-    }
-
-    &__menu-link {
-        color: $header-title-color;
-        padding: 0 0.75rem;
-        text-decoration: none;
-        font-family: $display-font-stack;
-        font-family: 'Roboto Condensed', serif;
+.content__section--image + .content__section--image, .content__section--image:last-child {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
     }
 }
 
 .top-bar {
     background-color: $header-color;
     background-size: 200px;
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     padding: $header-padding;
-    // position: fixed;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 0 50px black;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        top: 0;
+        bottom: -2rem;
+        left: 0;
+        right: 0;
+        position: absolute;
+        display: block;
+        box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+        pointer-events: none;
+    }
 
     // max-width: $container-width;
     // margin: 0 auto;
@@ -130,31 +216,38 @@ h1 {
     }
 
     &__title {
-        font-family: 'Berkshire Swash';
+        font-family: $header-font-stack;
         font-weight: bold;
         color: $header-title-color;
         font-size: $header-title-size;
     }
 
     &__menu-container {
-        background: rgba(0,0,0,0.3);
-        background: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0.2) 30%);
+        background: rgba(0,0,0,0.3), url('../images/wood_vertical.png');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0.2) 30%),  url('../images/wood_vertical.png');
+        background-size: auto, 150px;
     }
 
     &__menu {
         max-width: $container-width;
         margin: 0 auto;
+        // margin-bottom: 1rem;
     }
 
     &__menu-list {
         display: flex;
         padding: 0.35rem 0 0.25rem;
         margin: 0;
-        // margin-left: -.75rem;
+        flex-wrap: wrap;
+        // width: 100%;
+        // justify-content: space-between;
+        // border: 1px solid orange;
     }
 
     &__menu-item {
         list-style-type: none;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
         // border-left: 0.4px solid white;
 
         &:first-child {
@@ -174,9 +267,10 @@ h1 {
         // font-size: 0.9rem;
 
         &--active {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 0.5rem;
             box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+            color: #fff;
         }
     }
 }
@@ -188,5 +282,10 @@ body {
 
 .footer {
     max-width: $container-width;
-    margin: 0 auto;
+    margin: 1rem auto 0;
+    color: $body-text-color;
+    border-top: 0.5px solid rgba($body-text-color, 0.5);
+    padding: 1rem 0;
+    opacity: 0.8;
+    font-size: $footer-text-size;
 }
