@@ -1,0 +1,65 @@
+title: Page Section
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        sectionImage:
+                            type: section
+                            title: Section Image
+                            underline: true
+
+                            fields:
+                                header.sectionImage:
+                                    type: filepicker
+                                    folder: '@self'
+                                    label: Select an image for this section
+                                    preview_images: true
+                                    accept:
+                                        - .png
+                                        - .jpg
+                                        - .JPG
+                                        - .jpeg
+                                        - .gif
+                                        - .tif
+                                        - .tiff
+                                header.imageCaption:
+                                    type: text
+                                    label: Image caption
+
+                                header.imageAlign:
+                                    type: select
+                                    label: Image alignment
+                                    options:
+                                        left: Left
+                                        right: Right
+
+                                header.imageSize:
+                                    type: select
+                                    label: Image size
+                                    options:
+                                        small: Small
+                                        medium: Medium
+                                        large: Large
+                                        fullscreen: Full screen
+
+                                header.imageClearfix:
+                                    type: toggle
+                                    label: Image clearfix
+                                    options:
+                                        1: Yes
+                                        0: No
+                                    validate:
+                                        type: bool
+
+                                header.imageRotation:
+                                    type: number
+                                    label: Image rotation
+                                    default: 0
+                                    validate:
+                                        type: number

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
 @import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps');
 @import url('https://fonts.googleapis.com/css?family=Caveat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Cabin|Libre+Baskerville');
 
 // VARIABLES
 // color variables
@@ -16,25 +17,26 @@ $darkgrey: #444;
 $container-width: 850px;
 
 // typography variables
-$display-font-stack: Lora, serif;
 $caption-font-stack: Caveat, script;
-$body-font-stack: 'Roboto', sans-serif;
+$body-font-stack: 'Cabin', sans-serif;
+$menu-font-stack: Cabin, 'Roboto Condensed', sans-serif;
+$header-font-stack: 'Bilbo Swash Caps', sans-serif;
 $small-text: 0.9rem;
 
 $body-text-color: $lightishgrey;
 
 // header variables
 $header-title-color: $lightgrey;
-$header-title-size: 4rem;
 $header-padding: 1rem 0 0 0;
-$header-color: rgba(0,0,0,0);
-$header-font-stack: 'Bilbo Swash Caps', sans-serif;
+$header-color: rgba(0, 0, 0, 0);
+$header-title-size: 3.5rem;
 
 // footer variables
 $footer-text-size: $small-text;
 
 // general variables
 $highlight-color: orange;
+$background-color: #330b0b;
 
 // RULES
 // general rules
@@ -47,7 +49,8 @@ $highlight-color: orange;
     color: $white;
 }
 
-html, body {
+html,
+body {
     font-family: $body-font-stack;
     margin: 0;
     padding: 0;
@@ -67,77 +70,22 @@ h1 {
 }
 
 .header {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-size: cover;
     background-position: center;
     position: relative;
-    //
-    // &__title {
-    //     font-family: 'Bilbo Swash Caps', cursive;
-    //     font-weight: bold;
-    //     color: $header-title-color;
-    //     font-size: 4rem;
-    //     line-height: 1.1;
-    //     max-width: $container-width;
-    //     margin: 0 auto;
-    //     margin-top: 4rem;
-    //     margin-bottom: 1rem;
-    //     text-shadow: 0 0 50px black;
-    // }
-    //
-    // &__container {
-    //     max-width: $container-width;
-    //     margin: 0 auto;
-    //     text-align: center;
-    //     position: relative;
-    // }
-    //
-    // &__text {
-    //     position: fixed;
-    //     top: 20%;
-    //     transform: translate(0, -50%);
-    //     width: 100%;
-    //     left: 0;
-    // }
-    //
-    // &__menu {
-    //     background-color: orange;
-    //     padding: 0.5rem 0;
-    //     box-shadow: inset 0 0 25px rgba(0,0,0,0.5);
-    // }
-    //
-    // &__menu-list {
-    //     display: flex;
-    //     flex-wrap: wrap;
-    //     max-width: $container-width;
-    //     margin: 0 auto;
-    //     padding: 0;
-    // }
-    //
-    // &__menu-item {
-    //     list-style-type: none;
-    //
-    //     &:first-child {
-    //         border: none;
-    //     }
-    // }
-    //
-    // &__menu-link {
-    //     color: $header-title-color;
-    //     padding: 0 0.75rem;
-    //     text-decoration: none;
-    //     font-family: $display-font-stack;
-    //     font-family: 'Roboto Condensed', serif;
-    // }
+    margin-bottom: 1rem;
+
+    &--homepage {
+        min-height: 90vh;
+    }
 }
 
 .header-image {
     flex: 1 0 250px;
     background-size: cover;
     background-position: 50% 50%;
-    margin-bottom: 2rem;
 }
 
 h2 {
@@ -150,7 +98,10 @@ h2 {
     background-color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 
+    // alignment rules
     &--left {
         transform: rotate(-2deg);
         float: left;
@@ -165,20 +116,77 @@ h2 {
 
     &__image {
         max-width: 100%;
+
+        // size rules
+        &--small#{&}--portrait {
+            height: 200px;
+            width: auto;
+        }
+
+        &--small#{&}--square-portrait {
+            height: 160px;
+            width: auto;
+        }
+
+        &--small#{&}--square-landscape {
+            width: 160px;
+            height: auto;
+        }
+
+        &--small#{&}--landscape {
+            width: 200px;
+            height: auto;
+        }
+
+        &--medium#{&}--portrait {
+            height: 300px;
+            width: auto;
+        }
+
+        &--medium#{&}--square-portrait {
+            height: 250px;
+            width: auto;
+        }
+
+        &--medium#{&}--square-landscape {
+            width: 250px;
+            height: auto;
+        }
+
+        &--medium#{&}--landscape {
+            width: 300px;
+            height: auto;
+        }
+
+        &--medium#{&}--portrait {
+            width: 36%;
+        }
+
+        &--medium#{&}--landscape {
+            width: 50%;
+        }
+
+        &--large#{&}--portrait {
+            width: 50%;
+        }
+
+        &--large#{&}--landscape {
+            width: 66%;
+        }
     }
 
     &__caption {
         color: $darkgrey;
         font-family: $caption-font-stack;
         line-height: 1;
-        display: inline-block;
         font-size: 1.1rem;
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
     }
 }
 
-.content__section--image + .content__section--image, .content__section--image:last-child {
+.content__section--clearfix,
+.content__section--image:last-child {
     &::after {
         content: '';
         display: table;
@@ -202,7 +210,7 @@ h2 {
         right: 0;
         position: absolute;
         display: block;
-        box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
         pointer-events: none;
     }
 
@@ -220,12 +228,15 @@ h2 {
         font-weight: bold;
         color: $header-title-color;
         font-size: $header-title-size;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     &__menu-container {
-        background: rgba(0,0,0,0.3), url('../images/wood_vertical.png');
-        background-image: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0.2) 30%),  url('../images/wood_vertical.png');
-        background-size: auto, 150px;
+        // background: rgba(0,0,0,0.3), url('../images/wood_vertical.png');
+        // background-image: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0.2) 30%),  url('../images/wood_vertical.png');
+        // background-size: auto, 150px;
+        background: rgba(0, 0, 0, 0.2);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.1) 30%);
     }
 
     &__menu {
@@ -251,32 +262,62 @@ h2 {
         // border-left: 0.4px solid white;
 
         &:first-child {
-            border: none;
+            border: 0;
         }
     }
 
     &__menu-link {
         color: $header-title-color;
-        padding: 0 0.75rem;
+        padding: 0.25rem 0.75rem;
+        display: inline-block;
         text-decoration: none;
         // font-size: 0.9rem;
         text-shadow: 0 -1px 2px black;
-        font-family: $display-font-stack;
-        font-family: 'Pragati Narrow', serif;
-        font-size: 1.25rem;
+        font-family: $menu-font-stack;
+        font-size: 1rem;
         // font-size: 0.9rem;
+        border-radius: 0.5rem;
+        transition: background 0.2s;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
         &--active {
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 0.5rem;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
             color: #fff;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.3);
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+                color: #fff;
+            }
         }
+    }
+}
+
+.main {
+    margin-top: -2rem;
+    padding-top: 2rem;
+}
+
+.excerpt {
+    &__container {
+        font-size: 1.2rem;
+        max-width: $container-width;
+        margin: 0 auto;
+        border-bottom: 0.5px solid $body-text-color;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        color: $body-text-color;
     }
 }
 
 body {
     background-image: url('../images/dark_wood_@2X.png');
+    background-color: $background-color;
     background-size: 400px;
 }
 

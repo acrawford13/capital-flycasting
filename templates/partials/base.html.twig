@@ -2,17 +2,29 @@
 <html lang="{{ grav.language.getLanguage ?: 'en' }}">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
-        <link href="{{ theme_url }}/css/main.css" rel="stylesheet" />
+        <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+        {% block stylesheets %}
+            {% do assets.addCss('theme://css/purecss/pure-min.css', 102) %}
+            {% do assets.addCss('theme://css/main.css', 100) %}
+
+            {% if (browser.getBrowser == 'msie' and browser.getVersion > 8) or browser.getBrowser != 'msie' %}
+                {% do assets.addCss('theme://css/purecss/grids-responsive-min.css', 101) %}
+            {% endif %}
+            {% if browser.getBrowser == 'msie' and browser.getVersion <= 8 %}
+                {% do assets.addCss('theme://css/purecss/grids-responsive-old-ie-min.css', 101) %}
+            {% endif %}
+        {% endblock %}
         {{ assets.css() }}
+
         {% block javascripts %}
             {% do assets.addJs('jquery', 101) %}
         {% endblock %}
         {{ assets.js() }}
     </head>
     <body>
-        {% block header_image %}
-        {% endblock %}
         {% block header %}
             <header class="header">
                 {% include 'partials/header.html.twig' %}
