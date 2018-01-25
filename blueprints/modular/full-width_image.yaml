@@ -9,6 +9,8 @@ form:
             fields:
                 content:
                     fields:
+                        pageHeader:
+                            unset@: true
                         content:
                             unset@: true
 

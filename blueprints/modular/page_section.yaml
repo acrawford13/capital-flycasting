@@ -9,6 +9,8 @@ form:
             fields:
                 content:
                     fields:
+                        pageHeader:
+                            unset@: true
 
                         sectionImage:
                             type: section
@@ -29,6 +31,7 @@ form:
                                         - .gif
                                         - .tif
                                         - .tiff
+
                                 header.imageCaption:
                                     type: text
                                     label: Image caption

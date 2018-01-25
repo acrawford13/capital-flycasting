@@ -1,18 +1,8 @@
 {% extends 'partials/base.html.twig' %}
 
-{% block header %}
-    <header class="header header--homepage">
-        {% include 'partials/header.html.twig' %}
-        <div class="header-image" style="background-image:url('{{ [theme_url,'/images/headers/',site.site_header]|join }}')"></div>
-    </header>
-{% endblock %}
 {% block content %}
     {% for p in page.collection %}
     {% set clearfix = (p.header.imageClearfix and p.header.sectionImage and page.collection.prevSibling(p.path).header.sectionImage) ? ' content__section--clearfix' : '' %}
         {{ p.content }}
     {% endfor %}
-{% endblock %}
-
-{% block bottom %}
-    {{ assets.js('bottom') }}
 {% endblock %}

@@ -2,3 +2,44 @@ title: Default Page
 '@extends':
     type: default
     context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        header.media_order:
+                            unset@: true
+
+                        pageHeader:
+                            type: section
+                            title: Page Header
+                            underline: true
+                            ordering@: 999
+
+                            fields:
+                                header.media_order:
+                                    type: pagemedia
+                                    label: PLUGIN_ADMIN.PAGE_MEDIA
+
+                                header.pageHeader:
+                                    type: filepicker
+                                    folder: '@self'
+                                    label: Select a header image
+                                    preview_images: true
+                                    accept:
+                                        - .png
+                                        - .jpg
+                                        - .JPG
+                                        - .jpeg
+                                        - .gif
+                                        - .tif
+                                        - .tiff
+
+                                header.pageHeaderSize:
+                                    type: select
+                                    label: Select header image size
+                                    options:
+                                        large: Large
+                                        small: Small

@@ -1,10 +1,15 @@
-<div class="top-bar" style="background-image:url('{{ [theme_url,'/images/wood.png']|join }}')">
-    <div class="top-bar__container">
-        <span class="top-bar__title">{{ site.title|e }}</span>
+<header class="header header--{{ page.header.pageHeaderSize }}">
+    <div class="top-bar" style="background-image:url('{{ [theme_url,'/images/wood.png']|join }}')">
+        <div class="top-bar__container">
+            <span class="top-bar__title">{{ site.title|e }}</span>
+        </div>
+        <div class="top-bar__menu-container">
+            <nav class="top-bar__menu">
+                {% include 'partials/navigation.html.twig' %}
+            </nav>
+        </div>
     </div>
-    <div class="top-bar__menu-container">
-        <nav class="top-bar__menu">
-            {% include 'partials/navigation.html.twig' %}
-        </nav>
-    </div>
-</div>
+    {% if page.header.pageHeader %}
+        <div class="header-image header-image--{{ page.header.pageHeaderSize }}" style="background-image:url('{{ page.media[page.header.pageHeader].url }}')"></div>
+    {% endif %}
+</header>
