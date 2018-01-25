@@ -1,0 +1,40 @@
+title: Page Section
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        content:
+                            unset@: true
+
+                        header.sectionImage:
+                            type: filepicker
+                            folder: '@self'
+                            label: Select an image for this section
+                            preview_images: true
+                            accept:
+                                - .png
+                                - .jpg
+                                - .JPG
+                                - .jpeg
+                                - .gif
+                                - .tif
+                                - .tiff
+
+                        header.imageCaption:
+                            type: text
+                            label: Image caption
+
+                        header.imageRotation:
+                            type: select
+                            label: Image rotation
+                            default: none
+                            options:
+                                none: None
+                                left: 1° left
+                                right: 1° right

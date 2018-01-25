@@ -9,6 +9,7 @@ form:
             fields:
                 content:
                     fields:
+
                         sectionImage:
                             type: section
                             title: Section Image
@@ -51,6 +52,19 @@ form:
                                 header.imageClearfix:
                                     type: toggle
                                     label: Image clearfix
+                                    default: 0
+                                    highlight: 1
+                                    options:
+                                        1: Yes
+                                        0: No
+                                    validate:
+                                        type: bool
+
+                                header.imageBelowHeader:
+                                    type: toggle
+                                    label: Push image below header
+                                    default: 0
+                                    highlight: 1
                                     options:
                                         1: Yes
                                         0: No
@@ -58,8 +72,26 @@ form:
                                         type: bool
 
                                 header.imageRotation:
-                                    type: number
+                                    type: select
                                     label: Image rotation
-                                    default: 0
+                                    default: none
+                                    options:
+                                        none: None
+                                        left: 2° left
+                                        right: 2° right
+                        sectionStyling:
+                            type: section
+                            title: Section Style
+                            underline: true
+
+                            fields:
+                                header.sectionRule:
+                                    type: toggle
+                                    label: Add a rule above this section
+                                    options:
+                                        1: Yes
+                                        0: No
                                     validate:
-                                        type: number
+                                        type: bool
+                                    default: 0
+                                    highlight: 1

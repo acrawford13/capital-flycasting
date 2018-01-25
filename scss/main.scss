@@ -56,6 +56,10 @@ body {
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 h1 {
     font-family: $body-font-stack;
 }
@@ -103,76 +107,135 @@ h2 {
 
     // alignment rules
     &--left {
-        transform: rotate(-2deg);
         float: left;
-        margin-right: 1rem;
+        margin-right: 1.25rem;
     }
 
     &--right {
-        transform: rotate(2deg);
         float: right;
-        margin-left: 1rem;
+        margin-left: 1.25rem;
+    }
+
+    &--rotate-left {
+        transform: rotate(-2deg);
+    }
+
+    &--rotate-right {
+        transform: rotate(2deg);
+    }
+
+    &--full-width#{&}--rotate-left {
+        transform: rotate(-1deg);
+    }
+
+    &--full-width#{&}--rotate-right {
+        transform: rotate(1deg);
+    }
+
+    $small: 25%;
+    $medium: 37.5%;
+    $large: 50%;
+    $divider-portrait: 1.414;
+    $divider-square: 1.2;
+
+    &--small#{&}--landscape {
+        width: $small;
+        border-width: 5px;
+    }
+
+    &--medium#{&}--landscape {
+        width: $medium;
+    }
+
+    &--large#{&}--landscape {
+        width: $large;
+    }
+
+    &--small#{&}--portrait {
+        width: $small / $divider-portrait;
+        border-width: 5px;
+    }
+
+    &--medium#{&}--portrait {
+        width: $medium / $divider-portrait;
+    }
+
+    &--large#{&}--portrait {
+        width: $large / $divider-portrait;
+    }
+
+    &--small#{&}--square {
+        width: $small / $divider-square;
+        border-width: 5px;
+    }
+
+    &--medium#{&}--square {
+        width: $medium / $divider-square;
+    }
+
+    &--large#{&}--square {
+        width: $large / $divider-square;
     }
 
     &__image {
         max-width: 100%;
 
         // size rules
-        &--small#{&}--portrait {
-            height: 200px;
-            width: auto;
-        }
-
-        &--small#{&}--square-portrait {
-            height: 160px;
-            width: auto;
-        }
-
-        &--small#{&}--square-landscape {
-            width: 160px;
-            height: auto;
-        }
-
-        &--small#{&}--landscape {
-            width: 200px;
-            height: auto;
-        }
-
-        &--medium#{&}--portrait {
-            height: 300px;
-            width: auto;
-        }
-
-        &--medium#{&}--square-portrait {
-            height: 250px;
-            width: auto;
-        }
-
-        &--medium#{&}--square-landscape {
-            width: 250px;
-            height: auto;
-        }
-
-        &--medium#{&}--landscape {
-            width: 300px;
-            height: auto;
-        }
-
-        &--medium#{&}--portrait {
-            width: 36%;
-        }
-
-        &--medium#{&}--landscape {
-            width: 50%;
-        }
-
-        &--large#{&}--portrait {
-            width: 50%;
-        }
-
-        &--large#{&}--landscape {
-            width: 66%;
-        }
+        // &--small#{&}--portrait {
+        //     height: 200px;
+        //     width: auto;
+        // }
+        //
+        // &--small#{&}--square-portrait {
+        //     height: 160px;
+        //     width: auto;
+        // }
+        //
+        // &--small#{&}--square-landscape {
+        //     width: 160px;
+        //     height: auto;
+        // }
+        //
+        // &--small#{&}--landscape {
+        //     width: 200px;
+        //     height: auto;
+        // }
+        //
+        // &--medium#{&}--portrait {
+        //     height: 300px;
+        //     width: auto;
+        // }
+        //
+        // &--medium#{&}--square-portrait {
+        //     height: 250px;
+        //     width: auto;
+        // }
+        //
+        // &--medium#{&}--square-landscape {
+        //     width: 250px;
+        //     height: auto;
+        // }
+        //
+        // &--medium#{&}--landscape {
+        //     width: 300px;
+        //     height: auto;
+        // }
+        //
+        // &--large#{&}--portrait {
+        //     width: 36%;
+        // }
+        //
+        // &--large#{&}--square-portrait {
+        //     width: 50%;
+        // }
+        //
+        // &--large#{&}--square-landscape {
+        //     width: 50%;
+        // }
+        //
+        // &--large#{&}--landscape {
+        //     width: 66%;
+        // }
     }
 
     &__caption {
@@ -183,15 +246,24 @@ h2 {
         margin-top: 0.25rem;
         margin-bottom: 0.25rem;
     }
+
+    &--full-width &__caption {
+        font-size: 1.3rem;
+    }
 }
 
 .content__section--clearfix,
-.content__section--image:last-child {
+.content__section:last-child {
     &::after {
         content: '';
         display: table;
         clear: both;
     }
+}
+
+.section-rule {
+    border: 0;
+    border-bottom: 1px solid $white;
 }
 
 .top-bar {
@@ -329,4 +401,24 @@ body {
     padding: 1rem 0;
     opacity: 0.8;
     font-size: $footer-text-size;
+}
+
+// sm
+@media screen and (min-width: 35.5em) {
+
+}
+
+// md - 48em = 768px
+@media screen and (min-width: 48em) {
+
+}
+
+// lg - 64em = 1024px
+@media screen and (min-width: 64em) {
+
+}
+
+// xl
+@media screen and (min-width: 80em) {
+
 }

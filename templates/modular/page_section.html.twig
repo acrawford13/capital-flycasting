@@ -1,0 +1,23 @@
+{% if page.header.sectionRule %}<hr class="section-rule">{% endif %}
+{% set clearfix = (page.header.imageClearfix and page.header.sectionImage and page.parent.collection.prevSibling(page.path).header.sectionImage) ? ' content__section--clearfix' : '' %}
+<div class="content__section {{ page.header.sectionImage ? 'content__section--image' : '' }} {{ clearfix }}">
+    {% if page.header.imageBelowHeader %}<h2>{{ page.header.title }}</h2>{% endif %}
+    {% if page.header.sectionImage %}
+        {% set aspect_ratio = page.media[page.header.sectionImage].height/page.media[page.header.sectionImage].width %}
+        {% if aspect_ratio <= 0.75 %}
+            {% set orientation = "landscape" %}
+        {% elseif aspect_ratio <= 1.33 %}
+            {% set orientation = "square" %}
+        {% else %}
+            {% set orientation = "portrait" %}
+        {% endif %}
+        <div class="photo photo--{{ page.header.imageAlign }} photo--rotate-{{ page.header.imageRotation }} photo--{{ page.header.imageSize }} photo--{{ orientation }}">
+            <img alt="{{ page.header.imageCaption }}" src="{{ page.media[page.header.sectionImage].fixOrientation.url }}" class="photo__image  photo__image--{{ page.header.imageSize }} photo__image--{{ orientation }}" />
+            {% if page.header.imageCaption %}
+                <span class="photo__caption">{{ page.header.imageCaption }}</span>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if not page.header.imageBelowHeader %}<h2>{{ page.header.title }}</h2>{% endif %}
+    {{ page.content }}
+</div>

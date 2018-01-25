@@ -1,0 +1,6 @@
+{% if page.header.sectionImage %}
+<div class="photo photo--full-width photo--rotate-{{ page.header.imageRotation }}">
+    <img src="{{ page.media[page.header.sectionImage].fixOrientation.url }}" />
+    <span class="photo__caption">{{ page.header.imageCaption }}</span>
+</div>
+{% endif %}
