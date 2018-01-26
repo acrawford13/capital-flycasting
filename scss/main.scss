@@ -24,6 +24,7 @@ $header-font-stack: 'Bilbo Swash Caps', sans-serif;
 $small-text: 0.9rem;
 
 $body-text-color: $lightishgrey;
+$link-text-color: $body-text-color;
 
 // header variables
 $header-title-color: $lightgrey;
@@ -56,12 +57,20 @@ body {
     padding: 0;
 }
 
+a {
+    color: $link-text-color;
+}
+
 img {
     max-width: 100%;
 }
 
 h1 {
     font-family: $body-font-stack;
+}
+
+h2 {
+    margin: 0;
 }
 
 .content {
@@ -90,10 +99,6 @@ h1 {
     flex: 1 0 250px;
     background-size: cover;
     background-position: 50% 50%;
-}
-
-h2 {
-    margin: 0;
 }
 
 .photo {
@@ -175,67 +180,6 @@ h2 {
 
     &--large#{&}--square {
         width: $large / $divider-square;
-    }
-
-    &__image {
-        max-width: 100%;
-
-        // size rules
-        // &--small#{&}--portrait {
-        //     height: 200px;
-        //     width: auto;
-        // }
-        //
-        // &--small#{&}--square-portrait {
-        //     height: 160px;
-        //     width: auto;
-        // }
-        //
-        // &--small#{&}--square-landscape {
-        //     width: 160px;
-        //     height: auto;
-        // }
-        //
-        // &--small#{&}--landscape {
-        //     width: 200px;
-        //     height: auto;
-        // }
-        //
-        // &--medium#{&}--portrait {
-        //     height: 300px;
-        //     width: auto;
-        // }
-        //
-        // &--medium#{&}--square-portrait {
-        //     height: 250px;
-        //     width: auto;
-        // }
-        //
-        // &--medium#{&}--square-landscape {
-        //     width: 250px;
-        //     height: auto;
-        // }
-        //
-        // &--medium#{&}--landscape {
-        //     width: 300px;
-        //     height: auto;
-        // }
-        //
-        // &--large#{&}--portrait {
-        //     width: 36%;
-        // }
-        //
-        // &--large#{&}--square-portrait {
-        //     width: 50%;
-        // }
-        //
-        // &--large#{&}--square-landscape {
-        //     width: 50%;
-        // }
-        //
-        // &--large#{&}--landscape {
-        //     width: 66%;
-        // }
     }
 
     &__caption {

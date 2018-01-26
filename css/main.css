@@ -21,11 +21,17 @@ body {
   margin: 0;
   padding: 0; }
 
+a {
+  color: #ddd; }
+
 img {
   max-width: 100%; }
 
 h1 {
   font-family: "Cabin", sans-serif; }
+
+h2 {
+  margin: 0; }
 
 .content {
   color: #ddd; }
@@ -55,9 +61,6 @@ h1 {
           flex: 1 0 250px;
   background-size: cover;
   background-position: 50% 50%; }
-
-h2 {
-  margin: 0; }
 
 .photo {
   border: 6px solid white;
@@ -112,8 +115,6 @@ h2 {
     width: 31.25%; }
   .photo--large.photo--square {
     width: 41.66667%; }
-  .photo__image {
-    max-width: 100%; }
   .photo__caption {
     color: #444;
     font-family: Caveat, script;
