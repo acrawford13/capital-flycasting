@@ -13,6 +13,10 @@ form:
                             unset@: true
                         content:
                             unset@: true
+                        
+                        header.media_order:
+                            type: pagemedia
+                            label: PLUGIN_ADMIN.PAGE_MEDIA
 
                         header.sectionImage:
                             type: filepicker

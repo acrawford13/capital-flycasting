@@ -18,6 +18,10 @@ form:
                             underline: true
 
                             fields:
+                                header.media_order:
+                                    type: pagemedia
+                                    label: PLUGIN_ADMIN.PAGE_MEDIA
+
                                 header.sectionImage:
                                     type: filepicker
                                     folder: '@self'
@@ -90,7 +94,7 @@ form:
                             fields:
                                 header.sectionRule:
                                     type: toggle
-                                    label: Add a rule above this section
+                                    label: Add a border above this section
                                     options:
                                         1: Yes
                                         0: No
