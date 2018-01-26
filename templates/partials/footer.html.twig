@@ -5,5 +5,7 @@
     {% endif %}
 {% endfor %}
 <footer class="footer">
-&copy; Lyall Crawford | {{ modified_date|date('F Y') }}
+{% if site.footer.copyright %}
+    &copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}
+{% endif %}
 </footer>
