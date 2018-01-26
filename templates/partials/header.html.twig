@@ -1,4 +1,4 @@
-<header class="header header--{{ page.header.pageHeaderSize }}">
+<header class="header header--{{ page.header.pageHeader ? page.header.pageHeaderSize : '' }}">
     <div class="top-bar" style="background-image:url('{{ [theme_url,'/images/wood.png']|join }}')">
         <div class="top-bar__container">
             <span class="top-bar__title">{{ site.title|e }}</span>
