@@ -77,9 +77,15 @@ h2 {
     color: $body-text-color;
 }
 
+
+.limited-width {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 .container {
-    max-width: $container-width;
-    margin: 0 auto;
+    // max-width: $container-width;
+    // margin: 0 auto;
 }
 
 .header {
@@ -233,13 +239,11 @@ h2 {
     // max-width: $container-width;
     // margin: 0 auto;
 
-    &__container {
-        max-width: $container-width;
-        margin: 0 auto;
-        margin-bottom: 1rem;
-    }
-
     &__title {
+        line-height: 1;
+        display: inline-block;
+        // margin-top: 1rem;
+        margin-bottom: 1rem;
         font-family: $header-font-stack;
         font-weight: bold;
         color: $header-title-color;
@@ -256,7 +260,7 @@ h2 {
     }
 
     &__menu {
-        max-width: $container-width;
+        max-width: $container-width + 32px;
         margin: 0 auto;
         // margin-bottom: 1rem;
     }
@@ -267,7 +271,7 @@ h2 {
         margin: 0;
         flex-wrap: wrap;
         // width: 100%;
-        // justify-content: space-between;
+        justify-content: center;
         // border: 1px solid orange;
     }
 
@@ -322,7 +326,7 @@ h2 {
 .excerpt {
     &__container {
         font-size: 1.2rem;
-        max-width: $container-width;
+        // max-width: $container-width;
         margin: 0 auto;
         border-bottom: 0.5px solid $body-text-color;
         padding-bottom: 1rem;
@@ -338,13 +342,26 @@ body {
 }
 
 .footer {
-    max-width: $container-width;
-    margin: 1rem auto 0;
+    // max-width: $container-width;
+    margin-top: 1rem;
     color: $body-text-color;
     border-top: 0.5px solid rgba($body-text-color, 0.5);
     padding: 1rem 0;
     opacity: 0.8;
     font-size: $footer-text-size;
+}
+
+@media screen and (min-width: ($container-width + 32px)) {
+    .limited-width {
+        max-width: $container-width;
+        margin: 0 auto;
+    }
+
+    .top-bar {
+        &__menu-list {
+            justify-content: flex-start;
+        }
+    }
 }
 
 // sm
@@ -354,7 +371,6 @@ body {
 
 // md - 48em = 768px
 @media screen and (min-width: 48em) {
-
 }
 
 // lg - 64em = 1024px

@@ -4,7 +4,7 @@
         {% set modified_date = page.modified %}
     {% endif %}
 {% endfor %}
-<footer class="footer">
+<footer class="footer limited-width">
 {% if site.footer.copyright %}
     &copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}
 {% endif %}
