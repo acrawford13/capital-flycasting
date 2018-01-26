@@ -97,12 +97,14 @@ h2 {
     margin-bottom: 1rem;
 
     &--large {
-        min-height: 90vh;
+        height: 85vh;
+        max-height: 50vw;
+        min-height: 400px;
     }
 }
 
 .header-image {
-    flex: 1 0 250px;
+    flex: 1 1 250px;
     background-size: cover;
     background-position: 50% 50%;
 }
@@ -223,6 +225,7 @@ h2 {
     padding: $header-padding;
     position: relative;
     overflow: hidden;
+    flex: 0 0 auto;
 
     &::after {
         content: '';
