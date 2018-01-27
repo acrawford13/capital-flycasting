@@ -118,6 +118,10 @@ h2 {
     display: flex;
     flex-direction: column;
 
+    img {
+        max-height: 80vh;
+    }
+
     // alignment rules
     &--left {
         float: left;
@@ -129,12 +133,14 @@ h2 {
         margin-left: 1.25rem;
     }
 
-    &--rotate-left {
-        transform: rotate(-2deg);
-    }
+    &--rotate {
+        &-left {
+            transform: rotate(-2deg);
+        }
 
-    &--rotate-right {
-        transform: rotate(2deg);
+        &-right {
+            transform: rotate(2deg);
+        }
     }
 
     &--full-width#{&}--rotate-left {
@@ -145,49 +151,51 @@ h2 {
         transform: rotate(1deg);
     }
 
-    $small: 25%;
-    $medium: 37.5%;
-    $large: 50%;
-    $divider-portrait: 1.414;
-    $divider-square: 1.2;
+    $small: 50%;
+    $medium: 75%;
+    $large: 100%;
+    $divider-portrait: 2;
+    $divider-square: 1.5;
 
     &--small#{&}--landscape {
-        width: $small;
+        max-width: $small;
         border-width: 5px;
     }
 
     &--medium#{&}--landscape {
-        width: $medium;
+        max-width: $medium;
     }
 
     &--large#{&}--landscape {
-        width: $large;
+        max-width: $large;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     &--small#{&}--portrait {
-        width: $small / $divider-portrait;
+        max-width: $small / 1.414;
         border-width: 5px;
     }
 
     &--medium#{&}--portrait {
-        width: $medium / $divider-portrait;
+        max-width: $medium / $divider-portrait;
     }
 
     &--large#{&}--portrait {
-        width: $large / $divider-portrait;
+        max-width: $large / $divider-portrait;
     }
 
     &--small#{&}--square {
-        width: $small / $divider-square;
+        max-width: $small / 1.25;
         border-width: 5px;
     }
 
     &--medium#{&}--square {
-        width: $medium / $divider-square;
+        max-width: $medium / $divider-square;
     }
 
     &--large#{&}--square {
-        width: $large / $divider-square;
+        max-width: $large / $divider-square;
     }
 
     &__caption {
@@ -199,8 +207,10 @@ h2 {
         margin-bottom: 0.25rem;
     }
 
-    &--full-width &__caption {
-        font-size: 1.3rem;
+    &--full-width {
+        img {
+            max-height: none;
+        }
     }
 }
 
@@ -369,11 +379,114 @@ body {
 
 // sm
 @media screen and (min-width: 35.5em) {
+    .photo {
+        $small: 33%;
+        $medium: 50%;
+        $large: 66%;
+        $divider-portrait: 1.414;
+        $divider-square: 1.25;
 
+        &--small#{&}--landscape {
+            max-width: $small;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--landscape {
+            max-width: $medium;
+        }
+
+        &--large#{&}--landscape {
+            max-width: $large;
+        }
+
+        &--large#{&}--landscape#{&}--right {
+            margin-left: 1.25rem;
+        }
+
+        &--large#{&}--landscape#{&}--left {
+            margin-right: 1.25rem;
+        }
+
+        &--small#{&}--portrait {
+            max-width: $small / $divider-portrait;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--portrait {
+            max-width: $medium / $divider-portrait;
+        }
+
+        &--large#{&}--portrait {
+            max-width: $large / $divider-portrait;
+        }
+
+        &--small#{&}--square {
+            max-width: $small / $divider-square;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--square {
+            max-width: $medium / $divider-square;
+        }
+
+        &--large#{&}--square {
+            max-width: $large / $divider-square;
+        }
+
+        &--full-width &__caption {
+            font-size: 1.3rem;
+        }
+    }
 }
 
 // md - 48em = 768px
 @media screen and (min-width: 48em) {
+    .photo {
+        $small: 25%;
+        $medium: 37.5%;
+        $large: 50%;
+        $divider-portrait: 1.414;
+        $divider-square: 1.25;
+
+        &--small#{&}--landscape {
+            max-width: $small;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--landscape {
+            max-width: $medium;
+        }
+
+        &--large#{&}--landscape {
+            max-width: $large;
+        }
+
+        &--small#{&}--portrait {
+            max-width: $small / $divider-portrait;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--portrait {
+            max-width: $medium / $divider-portrait;
+        }
+
+        &--large#{&}--portrait {
+            max-width: $large / $divider-portrait;
+        }
+
+        &--small#{&}--square {
+            max-width: $small / $divider-square;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--square {
+            max-width: $medium / $divider-square;
+        }
+
+        &--large#{&}--square {
+            max-width: $large / $divider-square;
+        }
+    }
 }
 
 // lg - 64em = 1024px
