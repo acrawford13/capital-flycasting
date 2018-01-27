@@ -11,11 +11,13 @@
         {% else %}
             {% set orientation = "portrait" %}
         {% endif %}
-        <div class="photo photo--{{ page.header.imageAlign }} photo--rotate-{{ page.header.imageRotation }} photo--{{ page.header.imageSize }} photo--{{ orientation }}">
-            <img alt="{{ page.header.imageCaption }}" src="{{ page.media[page.header.sectionImage].fixOrientation.url }}" class="photo__image  photo__image--{{ page.header.imageSize }} photo__image--{{ orientation }}" />
-            {% if page.header.imageCaption %}
-                <span class="photo__caption">{{ page.header.imageCaption }}</span>
-            {% endif %}
+        <div class="photo-container">
+            <div class="photo photo--{{ page.header.imageAlign }} photo--rotate-{{ page.header.imageRotation }} photo--{{ page.header.imageSize }} photo--{{ orientation }}">
+                <img alt="{{ page.header.imageCaption }}" src="{{ page.media[page.header.sectionImage].fixOrientation.url }}" class="photo__image  photo__image--{{ page.header.imageSize }} photo__image--{{ orientation }}" />
+                {% if page.header.imageCaption %}
+                    <span class="photo__caption">{{ page.header.imageCaption }}</span>
+                {% endif %}
+            </div>
         </div>
     {% endif %}
     {% if not page.header.imageBelowHeader %}<h2>{{ page.header.title }}</h2>{% endif %}
