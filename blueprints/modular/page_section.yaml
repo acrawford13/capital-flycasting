@@ -47,6 +47,17 @@ form:
                                         large: Large
                                         fullscreen: Full screen
 
+                                header.imageClickable:
+                                    type: toggle
+                                    label: Enable clicking image to expand
+                                    default: 1
+                                    highlight: 1
+                                    options:
+                                        1: Yes
+                                        0: No
+                                    validate:
+                                        type: bool
+
                                 header.imageClearfix:
                                     type: toggle
                                     label: Image clearfix

@@ -40,7 +40,7 @@
             {{ assets.js('bottom') }}
         {% endblock %}
         <script>
-            $(document).on('click', '.photo', function(){
+            $(document).on('click', '.photo--clickable', function(){
                 $('.photo--clicked').removeClass('photo--clicked');
                 $('.photo--temp').remove();
                 $(this).clone().addClass('photo--temp').insertAfter($(this).parent());
