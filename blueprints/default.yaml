@@ -12,6 +12,15 @@ form:
                         header.media_order:
                             unset@: true
 
+                        pageFooter:
+                            type: section
+                            title: Page Footer
+                            fields:
+                                header.pageFooter:
+                                    type: pages
+                                    show_all: false
+                                    show_root: true
+
                         pageHeader:
                             type: section
                             title: Page Header

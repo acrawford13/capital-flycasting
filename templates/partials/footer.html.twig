@@ -8,4 +8,10 @@
 {% if site.footer.copyright %}
     &copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}
 {% endif %}
+{% if site.footer.left and site.footer.right %}
+    <div class="pure-g">
+        <div class="pure-u-md-1-2">{{ site.footer.left }}</div>
+        <div class="pure-u-md-1-2">{{ site.footer.right }}</div>
+    </div>
+{% endif %}
 </footer>

@@ -23,18 +23,9 @@ form:
                                     label: PLUGIN_ADMIN.PAGE_MEDIA
 
                                 header.sectionImage:
-                                    type: filepicker
-                                    folder: '@self'
+                                    type: pagemediaselect
                                     label: Select an image for this section
                                     preview_images: true
-                                    accept:
-                                        - .png
-                                        - .jpg
-                                        - .JPG
-                                        - .jpeg
-                                        - .gif
-                                        - .tif
-                                        - .tiff
 
                                 header.imageCaption:
                                     type: text
