@@ -117,7 +117,7 @@ h2 {
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
-    transition: transform 2s;
+    transition: transform 0.5s;
 
     &--clickable {
         .photo__caption::before {
