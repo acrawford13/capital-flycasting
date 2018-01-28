@@ -19,7 +19,8 @@ html,
 body {
   font-family: "Cabin", sans-serif;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  height: 100%; }
 
 a {
   color: #ddd; }
@@ -51,7 +52,10 @@ h2 {
   background-size: cover;
   background-position: center;
   position: relative;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto; }
 
 .header-image {
   background-size: cover;
@@ -322,11 +326,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 1rem 0;
   color: #444;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
@@ -340,11 +348,16 @@ body {
     -o-border-image: url("../images/wood.png") 16 repeat;
        border-image: url("../images/wood.png") 16 repeat;
     font-size: 0.9rem;
-    background-color: white; }
+    background-color: white;
+    opacity: 0.95; }
   .footer__logos {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
-    display: inline-flex; }
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 1rem; }
   .footer__logo {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100px;
@@ -353,6 +366,10 @@ body {
       -webkit-box-flex: 0;
           -ms-flex: 0 1 200px;
               flex: 0 1 200px; }
+  .footer__copyright {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto; }
 
 @media screen and (min-width: 882px) {
   .limited-width {
@@ -364,6 +381,19 @@ body {
             justify-content: flex-start; } }
 
 @media screen and (min-width: 35.5em) {
+  .footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
+    .footer__logos {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin-bottom: 0; }
   .photo--small.photo--landscape {
     max-width: 33%;
     border-width: 5px; }
