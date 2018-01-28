@@ -85,11 +85,7 @@ h2 {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s; }
+          flex-direction: column; }
   .photo--clickable .photo__caption::before {
     content: '+';
     display: inline-block;
