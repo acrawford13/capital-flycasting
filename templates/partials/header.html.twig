@@ -1,7 +1,10 @@
 <header class="header header--{{ page.header.pageHeader ? page.header.pageHeaderSize : '' }}">
     <div class="top-bar" style="background-image:url('{{ [theme_url,'/images/wood.png']|join }}')">
         <div class="top-bar__container limited-width">
-            <span class="top-bar__title">{{ site.title|e }}</span>
+            <div class="top-bar__site-identity">
+                <span class="top-bar__title">{{ site.title|e }}</span>
+                {% if site.subtitle %}<span class="top-bar__subtitle">{{ site.subtitle|e }}</span>{% endif %}
+            </div>
         </div>
         <div class="top-bar__menu-container">
             <nav class="top-bar__menu">

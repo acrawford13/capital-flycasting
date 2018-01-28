@@ -208,15 +208,38 @@ h2 {
     -webkit-box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
             box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
     pointer-events: none; }
+  .top-bar__site-identity {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 1rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
   .top-bar__title {
     line-height: 1;
-    display: inline-block;
-    margin-bottom: 1rem;
     font-family: "Bilbo Swash Caps", sans-serif;
     font-weight: bold;
     color: #eee;
     font-size: 3.5rem;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2; }
+  .top-bar__subtitle {
+    margin-top: -0.25rem;
+    margin-bottom: -0.25rem;
+    font-family: "Cabin", sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    opacity: 0.75;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    padding-right: 1rem;
+    padding-top: 0.15rem;
+    padding-left: 0.75rem;
+    margin-left: -0.75rem; }
   .top-bar__menu-container {
     background: rgba(0, 0, 0, 0.2);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), color-stop(30%, rgba(0, 0, 0, 0.1)));

@@ -308,16 +308,37 @@ h2 {
     // max-width: $container-width;
     // margin: 0 auto;
 
+    &__site-identity {
+        display: inline-flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+    }
+
     &__title {
         line-height: 1;
-        display: inline-block;
-        // margin-top: 1rem;
-        margin-bottom: 1rem;
         font-family: $header-font-stack;
         font-weight: bold;
         color: $header-title-color;
         font-size: $header-title-size;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+    }
+
+    &__subtitle {
+        margin-top: -0.25rem;
+        margin-bottom: -0.25rem;
+        // display: block;
+        font-family: $body-font-stack;
+        font-size: 0.9rem;
+        color: white;
+        opacity: 0.75;
+        border-top: 1px solid rgba(0,0,0,0.6);
+        // padding: 0.25rem;
+        padding-right: 1rem;
+        padding-top: 0.15rem;
+        padding-left: 0.75rem;
+        margin-left: -0.75rem;
     }
 
     &__menu-container {
