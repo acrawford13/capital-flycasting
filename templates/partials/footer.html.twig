@@ -4,14 +4,15 @@
         {% set modified_date = page.modified %}
     {% endif %}
 {% endfor %}
-<footer class="footer limited-width">
-{% if site.footer.copyright %}
-    &copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}
-{% endif %}
-{% if site.footer.left and site.footer.right %}
-    <div class="pure-g">
-        <div class="pure-u-md-1-2">{{ site.footer.left }}</div>
-        <div class="pure-u-md-1-2">{{ site.footer.right }}</div>
+<footer class="footer__wrapper">
+    <div class="footer limited-width">
+        <div class="footer__logos">
+            <div class="footer__logo">
+                <img src=" {{ url('theme://images/ffilogo.jpg') }} " />
+            </div>
+        </div>
+    {% if site.footer.copyright %}
+        <span class="footer__copyright">&copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}</span>
+    {% endif %}
     </div>
-{% endif %}
 </footer>

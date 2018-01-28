@@ -432,13 +432,28 @@ body {
 }
 
 .footer {
-    // max-width: $container-width;
-    margin-top: 1rem;
-    color: $body-text-color;
-    border-top: 0.5px solid rgba($body-text-color, 0.5);
+    display: flex;
     padding: 1rem 0;
-    opacity: 0.8;
-    font-size: $footer-text-size;
+    color: $darkgrey;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &__wrapper {
+        margin-top: 1rem;
+        color: rgba($body-text-color, 0.8);
+        border-top: 1rem solid transparent;
+        border-image: url('../images/wood.png') 16 repeat;
+        font-size: $footer-text-size;
+        background-color: white;
+    }
+
+    &__logos {
+        display: inline-flex;
+    }
+
+    &__logo {
+        flex: 0 1 200px;
+    }
 }
 
 @media screen and (min-width: ($container-width + 32px)) {
