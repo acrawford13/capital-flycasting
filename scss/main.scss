@@ -97,16 +97,26 @@ h2 {
     margin-bottom: 1rem;
 
     &--large {
-        height: 85vh;
-        max-height: 50vw;
-        min-height: 400px;
+        // height: 85vh;
+        // max-height: 50vw;
+        // min-height: 400px;
     }
 }
 
 .header-image {
-    flex: 1 1 250px;
     background-size: cover;
     background-position: 50% 50%;
+    max-height: 50vw;
+
+    &--small {
+        flex: 0 1 30vh;
+        min-height: 200px;
+    }
+
+    &--large {
+        flex: 0 1 70vh;
+        min-height: 300px;
+    }
 }
 
 .photo {
