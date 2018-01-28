@@ -517,7 +517,7 @@ body {
 
 @media screen and (min-width: ($container-width + 32px)) {
     .limited-width {
-        max-width: $container-width;
+        width: $container-width;
         margin: 0 auto;
     }
 
