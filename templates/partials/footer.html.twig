@@ -5,14 +5,31 @@
     {% endif %}
 {% endfor %}
 <footer class="footer__wrapper">
+    <style>
+        .footer__logos--default {
+            height: {{ site.footer.logoHeight }}px !important;
+        }
+
+        .footer__logos--home {
+            height: {{ site.footer.logoHeightHomepage }}px !important;
+        }
+    </style>
     <div class="footer limited-width">
-        <div class="footer__logos">
-            <div class="footer__logo {{ page.home ? "footer__logo--home" : '' }}">
-                <img src=" {{ url('theme://images/ffilogo.jpg') }} " />
+        {% if site.footer.images %}
+        <div class="footer__logos {{ page.home ? "footer__logos--home" : 'footer__logos--default' }}">
+            {% for logo in site.footer.images %}
+            {% set logo_aspect = media_directory('theme://images/logos')[logo.image].width/media_directory('theme://images/logos')[logo.image].height %}
+            <div style="flex: {{ logo_aspect }}" class="footer__logo">
+                <img alt="{{ logo.title }}" class="footer__logo-image" src="{{ media_directory('theme://images/logos')[logo.image].url }}" />
             </div>
+            {% endfor %}
         </div>
-    {% if site.footer.copyright %}
-        <span class="footer__copyright">&copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}</span>
-    {% endif %}
+        {% endif %}
+        <div class="footer__text">
+            {{ site.footer.text|markdown }}
+            {% if site.footer.copyright %}
+                <p class="footer__copyright">&copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}</p>
+            {% endif %}
+        </div>
     </div>
 </footer>

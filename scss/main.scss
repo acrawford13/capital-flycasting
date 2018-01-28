@@ -461,18 +461,51 @@ body {
         display: inline-flex;
         justify-content: center;
         margin-bottom: 1rem;
-    }
-
-    &__logo {
-        flex: 0 1 100px;
+        height: 100px;
 
         &--home {
-            flex: 0 1 200px;
+            height: 125px;
         }
     }
 
+    &__logo {
+        margin-right: 0.5rem;
+        height: 100%;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    //     flex: 0 1 100px;
+    //
+    //     &--home {
+    //         flex: 0 1 200px;
+    //     }
+    }
+
+    &__logo-image {
+        max-height: 100%;
+    }
+
+    &__text {
+        text-align: center;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        a {
+            color: $darkgrey;
+        }
+        // flex: 0 0 auto;
+    }
+
     &__copyright {
-        flex: 0 0 auto;
+        // margin-bottom: 0;
     }
 }
 
@@ -494,10 +527,15 @@ body {
     .footer {
         flex-direction: row;
         align-items: flex-end;
+        justify-content: space-between;
 
         &__logos {
             justify-content: space-between;
             margin-bottom: 0;
+        }
+
+        &__text {
+            text-align: right;
         }
     }
 
