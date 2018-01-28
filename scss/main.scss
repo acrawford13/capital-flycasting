@@ -131,7 +131,9 @@ h2 {
     flex-direction: column;
 
     &--clickable {
-        .photo__caption::before {
+        cursor: pointer;
+
+        &::after {
             content: '+';
             display: inline-block;
             position: absolute;
@@ -149,9 +151,13 @@ h2 {
         max-height: 100vh !important;
         margin: 0 !important;
         transform: rotate(0) !important;
+    }
 
-        .photo__caption::before {
-            display: none;
+    &--clickable#{&}--clicked {
+        &::after {
+            font-size: 2.5rem;
+            top: 15px;
+            content: '\00d7';
         }
     }
 
