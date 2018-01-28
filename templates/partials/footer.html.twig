@@ -5,19 +5,25 @@
     {% endif %}
 {% endfor %}
 <footer class="footer__wrapper">
+    {% if config.footer.logoHeight %}
     <style>
+        {% if config.footer.logoHeight.default %}
         .footer__logos--default {
-            height: {{ site.footer.logoHeight }}px !important;
+            height: {{ config.footer.logoHeight.default }}px !important;
         }
+        {% endif %}
 
+        {% if config.footer.logoHeight.homepage %}
         .footer__logos--home {
-            height: {{ site.footer.logoHeightHomepage }}px !important;
+            height: {{ config.footer.logoHeight.homepage }}px !important;
         }
+        {% endif %}
     </style>
+    {% endif %}
     <div class="footer limited-width">
-        {% if site.footer.images %}
+        {% if config.footer.images %}
         <div class="footer__logos {{ page.home ? "footer__logos--home" : 'footer__logos--default' }}">
-            {% for logo in site.footer.images %}
+            {% for logo in config.footer.images %}
             {% set logo_aspect = media_directory('theme://images/logos')[logo.image].width/media_directory('theme://images/logos')[logo.image].height %}
             <div style="flex: {{ logo_aspect }}" class="footer__logo">
                 <img alt="{{ logo.title }}" class="footer__logo-image" src="{{ media_directory('theme://images/logos')[logo.image].url }}" />
@@ -26,8 +32,8 @@
         </div>
         {% endif %}
         <div class="footer__text">
-            {{ site.footer.text|markdown }}
-            {% if site.footer.copyright %}
+            {{ config.footer.text|markdown }}
+            {% if config.footer.copyright %}
                 <p class="footer__copyright">&copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}</p>
             {% endif %}
         </div>
