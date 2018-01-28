@@ -429,6 +429,12 @@ body {
     background-image: url('../images/dark_wood_@2X.png');
     background-color: $background-color;
     background-size: 400px;
+    display: flex;
+    flex-direction: column;
+
+    > * {
+        flex: 1 0 auto;
+    }
 }
 
 .footer {
@@ -439,6 +445,7 @@ body {
     justify-content: space-between;
 
     &__wrapper {
+        flex: 0 0 auto;
         margin-top: 1rem;
         color: rgba($body-text-color, 0.8);
         border-top: 1rem solid transparent;
@@ -452,7 +459,11 @@ body {
     }
 
     &__logo {
-        flex: 0 1 200px;
+        flex: 0 1 100px;
+
+        &--home {
+            flex: 0 1 200px;
+        }
     }
 }
 

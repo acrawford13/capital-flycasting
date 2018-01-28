@@ -305,7 +305,18 @@ h2 {
 body {
   background-image: url("../images/dark_wood_@2X.png");
   background-color: #330b0b;
-  background-size: 400px; }
+  background-size: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  body > * {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto; }
 
 .footer {
   display: -webkit-box;
@@ -320,6 +331,9 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between; }
   .footer__wrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
     margin-top: 1rem;
     color: rgba(221, 221, 221, 0.8);
     border-top: 1rem solid transparent;
@@ -333,8 +347,12 @@ body {
     display: inline-flex; }
   .footer__logo {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 200px;
-            flex: 0 1 200px; }
+        -ms-flex: 0 1 100px;
+            flex: 0 1 100px; }
+    .footer__logo--home {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 1 200px;
+              flex: 0 1 200px; }
 
 @media screen and (min-width: 882px) {
   .limited-width {
