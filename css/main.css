@@ -37,6 +37,14 @@ h2 {
 .content {
   color: #ddd; }
 
+.page__heading {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem; }
+
+.page__subheading {
+  font-style: italic; }
+
 .limited-width {
   margin-left: 1rem;
   margin-right: 1rem; }

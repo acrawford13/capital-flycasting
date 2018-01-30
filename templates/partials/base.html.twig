@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="{{ grav.language.getLanguage ?: 'en' }}">
     <head>
+        {% if site.googleAnalyticsId %}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{site.googleAnalyticsId}}"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{{ site.googleAnalyticsId }}');
+        </script>
+        {% endif %}
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+
+        {% if header.title %}
+            {% set pageTitle = header.title|e ~ " | " %}
+        {% endif %}
+        {% set pageTitle = pageTitle ~ site.title|e %}
+        {% if site.subtitle %}
+            {% set pageTitle = pageTitle ~ " - " ~ site.subtitle %}
+        {% endif %}
+        <title>{{ pageTitle }}</title>
         <link rel="canonical" href="{{ page.url(true, true) }}" />
+        <!-- Search Engine -->
+        <meta name="description" content="{{ page.summary(null, true) }}">
+        <meta name="image" content="{{ page.header.pageHeader ? 'http://www.capitalflycasting.com' ~ page.media[page.header.pageHeader].url : '' }}">
+        <!-- Schema.org for Google -->
+        <meta itemprop="name" content="{{ pageTitle }}">
+        <meta itemprop="description" content="{{ page.summary(null, true) }}">
+        <meta itemprop="image" content="{{ page.header.pageHeader ? 'http://www.capitalflycasting.com' ~ page.media[page.header.pageHeader].url : '' }}">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ pageTitle }}">
+        <meta name="twitter:description" content="{{ page.summary(null, true) }}">
+        <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+        <meta name="og:title" content="{{ header.title ? header.title : site.title }}">
+        <meta name="og:description" content="{{ page.summary(null, true) }}">
+        <meta name="og:url" content="http://www.capitalflycasting.com">
+        <meta name="og:site_name" content="Capital Fly Casting - Canberra, Australia">
+        <meta name="og:locale" content="en_AU">
+        <meta name="og:type" content="website">
 
         {% block stylesheets %}
             {% do assets.addCss('theme://css/purecss/pure-min.css', 102) %}

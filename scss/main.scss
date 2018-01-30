@@ -78,6 +78,18 @@ h2 {
     color: $body-text-color;
 }
 
+.page {
+    &__heading {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    &__subheading {
+        font-style: italic;
+    }
+}
+
 
 .limited-width {
     margin-left: 1rem;
