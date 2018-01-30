@@ -1,0 +1,18 @@
+title: Course Section
+'@extends':
+    type: modular/page_section
+    context: blueprints://
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        header.title:
+                            label: Course Title
+
+                        header.shortDescription:
+                            label: Course Description (Short)
+                            type: textarea
+                            ordering@: header.title
