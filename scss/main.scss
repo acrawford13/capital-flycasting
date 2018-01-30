@@ -396,8 +396,7 @@ h2 {
 
     &__menu-item {
         list-style-type: none;
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
+        margin: 0.25rem;
         // border-left: 0.4px solid white;
 
         &:first-child {
@@ -407,7 +406,7 @@ h2 {
 
     &__menu-link {
         color: $header-title-color;
-        padding: 0.25rem 0.75rem;
+        padding: 0.5rem 0.75rem;
         display: inline-block;
         text-decoration: none;
         // font-size: 0.9rem;
@@ -552,6 +551,16 @@ body {
 
 // sm
 @media screen and (min-width: 35.5em) {
+    .top-bar {
+        &__menu-item {
+            margin: 0 0.25rem;
+        }
+        
+        &__menu-link {
+            padding: 0.25rem 0.75rem;
+        }
+    }
+
     .footer {
         flex-direction: row;
         align-items: flex-end;
