@@ -324,6 +324,16 @@ h2 {
         pointer-events: none;
     }
 
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__right {
+        align-self: center;
+        flex: 0 0 70px;
+    }
+
     // max-width: $container-width;
     // margin: 0 auto;
 
