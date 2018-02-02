@@ -14,32 +14,10 @@ form:
 
                         pageHeader:
                             type: section
-                            title: Page Header
+                            title: Page Images
                             underline: true
                             ordering@: 999
 
-                            fields:
-                                header.media_order:
-                                    type: pagemedia
-                                    label: PLUGIN_ADMIN.PAGE_MEDIA
-
-                                header.pageHeader:
-                                    type: filepicker
-                                    folder: '@self'
-                                    label: Select a header image
-                                    preview_images: true
-                                    accept:
-                                        - .png
-                                        - .jpg
-                                        - .JPG
-                                        - .jpeg
-                                        - .gif
-                                        - .tif
-                                        - .tiff
-
-                                header.pageHeaderSize:
-                                    type: select
-                                    label: Select header image size
-                                    options:
-                                        large: Large
-                                        small: Small
+                            import@:
+                                type: partials/headerimages
+                                context: blueprints://

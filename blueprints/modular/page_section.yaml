@@ -19,8 +19,19 @@ form:
 
                             fields:
                                 header.media_order:
-                                    type: pagemedia
-                                    label: PLUGIN_ADMIN.PAGE_MEDIA
+                                   type: pagemedia
+                                   label: PLUGIN_ADMIN.PAGE_MEDIA
+
+                                header.folder:
+                                    type: foldermedia
+                                    label: Foldermedia
+                                    destination: 'theme://images/headers'
+
+                                temp:
+                                    type: file
+                                    label: File
+                                    destination: 'theme://images/headers'
+                                    data-default@: '\Grav\Plugin\FolderManagerPlugin::test'
 
                                 header.sectionImage:
                                     type: pagemediaselect

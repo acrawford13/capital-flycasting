@@ -1,0 +1,37 @@
+form:
+    fields:
+        header.images:
+            type: file
+            label: Image Upload
+            destination: '@self'
+            multiple: true
+            accept:
+                - 'image/*'
+
+        spacer:
+            type: spacer
+            title: Page Header
+
+        header.pageHeader:
+            type: filepicker
+            folder: '@self'
+            label: Select a header image
+            toggleable: true
+            preview_images: true
+
+        header.pageHeaderSize:
+            type: select
+            label: Select header image size
+            options:
+                large: Large
+                small: Small
+
+        spacer2:
+            type: spacer
+            title: Title Bar Image
+
+        header.topBarImage:
+            type: filepicker
+            folder: '@self'
+            label: Select an image
+            toggleable: true

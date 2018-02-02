@@ -203,7 +203,6 @@ h2 {
   background-color: transparent;
   background-size: 200px;
   background-repeat: repeat;
-  padding: 1rem 0 0 0;
   position: relative;
   overflow: hidden;
   -webkit-box-flex: 0;
@@ -227,12 +226,23 @@ h2 {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-  .top-bar__right {
-    -ms-flex-item-align: center;
-        align-self: center;
+  .top-bar__icon {
+    background-color: #fafafa;
+    background: url("../images/fabric_1.png");
+    background-size: 200px;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 70px;
-            flex: 0 0 70px; }
+            flex: 0 0 70px;
+    padding: 0.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: -0.25rem;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
   .top-bar__site-identity {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -241,6 +251,7 @@ h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -405,7 +416,8 @@ body {
   .top-bar__menu-list {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
-            justify-content: flex-start; } }
+            justify-content: flex-start;
+    padding-right: 94px; } }
 
 @media screen and (min-width: 35.5em) {
   .top-bar__menu-item {

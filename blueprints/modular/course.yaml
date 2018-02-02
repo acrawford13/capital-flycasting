@@ -13,6 +13,9 @@ form:
                             label: Course Title
 
                         header.shortDescription:
-                            label: Course Description (Short)
+                            label: Course Description (Short - for Google)
                             type: textarea
                             ordering@: header.title
+
+                        content:
+                            label: Course Description (Full)

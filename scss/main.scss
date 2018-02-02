@@ -39,6 +39,8 @@ $footer-text-size: $small-text;
 $highlight-color: orange;
 $background-color: #330b0b;
 
+$top-bar-icon-width: 70px;
+
 // RULES
 // general rules
 * {
@@ -307,7 +309,7 @@ h2 {
     background-color: $header-color;
     background-size: 200px;
     background-repeat: repeat;
-    padding: $header-padding;
+    // padding: $header-padding;
     position: relative;
     overflow: hidden;
     flex: 0 0 auto;
@@ -329,9 +331,16 @@ h2 {
         justify-content: space-between;
     }
 
-    &__right {
-        align-self: center;
-        flex: 0 0 70px;
+    &__icon {
+        background-color: $white;
+        background: url('../images/fabric_1.png');
+        background-size: 200px;
+        flex: 0 0 $top-bar-icon-width;
+        padding: 0.25rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: -0.25rem;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
 
     // max-width: $container-width;
@@ -340,6 +349,7 @@ h2 {
     &__site-identity {
         display: inline-flex;
         flex-direction: column;
+        margin-top: 1rem;
         margin-bottom: 1rem;
         align-items: flex-start;
     }
@@ -545,6 +555,7 @@ body {
     .top-bar {
         &__menu-list {
             justify-content: flex-start;
+            padding-right: $top-bar-icon-width + 24px;
         }
     }
 }
@@ -552,10 +563,11 @@ body {
 // sm
 @media screen and (min-width: 35.5em) {
     .top-bar {
+
         &__menu-item {
             margin: 0 0.25rem;
         }
-        
+
         &__menu-link {
             padding: 0.25rem 0.75rem;
         }
