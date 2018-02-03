@@ -7,8 +7,7 @@
             </div>
             {% if page.header.topBarImage %}
             <div class="top-bar__icon">
-                <div class="top-bar__icon-image">
-                    <img src="{{ page.media[page.header.topBarImage].url }}" />
+                <div class="top-bar__icon-image" style="background-image:url('{{ page.media[page.header.topBarImage].url }}')">
                 </div>
             </div>
             {% endif %}

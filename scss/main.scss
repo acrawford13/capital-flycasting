@@ -39,7 +39,7 @@ $footer-text-size: $small-text;
 $highlight-color: orange;
 $background-color: #330b0b;
 
-$top-bar-icon-width: 70px;
+$top-bar-icon-width: 80px;
 
 // RULES
 // general rules
@@ -214,6 +214,10 @@ h2 {
         }
     }
 
+    &--full-width {
+        clear: both;
+    }
+
     &--full-width#{&}--rotate-left {
         transform: rotate(-1deg);
     }
@@ -333,14 +337,19 @@ h2 {
 
     &__icon {
         background-color: $white;
-        background: url('../images/fabric_1.png');
         background-size: 200px;
         flex: 0 0 $top-bar-icon-width;
-        padding: 0.25rem;
-        display: flex;
-        align-items: center;
-        margin-bottom: -0.25rem;
+        height: $top-bar-icon-width;
+        align-self: center;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+
+    &__icon-image {
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
     }
 
     // max-width: $container-width;
@@ -570,6 +579,10 @@ body {
 
         &__menu-link {
             padding: 0.25rem 0.75rem;
+        }
+
+        &__icon {
+            display: block;
         }
     }
 

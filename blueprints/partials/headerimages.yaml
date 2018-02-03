@@ -1,16 +1,23 @@
 form:
     fields:
-        header.images:
-            type: file
-            label: Image Upload
-            destination: '@self'
-            multiple: true
-            accept:
-                - 'image/*'
+        # header.images:
+        #     type: file
+        #     label: Image Upload
+        #     destination: '@self'
+        #     multiple: true
+        #     accept:
+        #         - 'image/*'
 
-        spacer:
-            type: spacer
-            title: Page Header
+        # spacer:
+        #     type: spacer
+        #     title: Page Header
+
+
+
+
+        # header.media_order:
+        #     type: pagemedia
+        #     label: PLUGIN_ADMIN.PAGE_MEDIA
 
         header.pageHeader:
             type: filepicker
@@ -35,3 +42,4 @@ form:
             folder: '@self'
             label: Select an image
             toggleable: true
+            preview_images: true

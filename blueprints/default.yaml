@@ -9,8 +9,6 @@ form:
             fields:
                 content:
                     fields:
-                        header.media_order:
-                            unset@: true
 
                         pageHeader:
                             type: section

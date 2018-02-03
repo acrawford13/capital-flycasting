@@ -1,0 +1,14 @@
+title: Modular Page
+'@extends':
+    type: modular
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        header.media_order:
+                            type: pagemedia
+                            ordering@: header.content.order.dir

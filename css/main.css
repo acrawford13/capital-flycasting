@@ -148,6 +148,8 @@ h2 {
   .photo--rotate-right {
     -webkit-transform: rotate(2deg);
             transform: rotate(2deg); }
+  .photo--full-width {
+    clear: both; }
   .photo--full-width.photo--rotate-left {
     -webkit-transform: rotate(-1deg);
             transform: rotate(-1deg); }
@@ -228,21 +230,21 @@ h2 {
             justify-content: space-between; }
   .top-bar__icon {
     background-color: #fafafa;
-    background: url("../images/fabric_1.png");
     background-size: 200px;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 70px;
-            flex: 0 0 70px;
-    padding: 0.25rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-bottom: -0.25rem;
+        -ms-flex: 0 0 80px;
+            flex: 0 0 80px;
+    height: 80px;
+    -ms-flex-item-align: center;
+        align-self: center;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: none; }
+  .top-bar__icon-image {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%; }
   .top-bar__site-identity {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -417,13 +419,15 @@ body {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    padding-right: 94px; } }
+    padding-right: 104px; } }
 
 @media screen and (min-width: 35.5em) {
   .top-bar__menu-item {
     margin: 0 0.25rem; }
   .top-bar__menu-link {
     padding: 0.25rem 0.75rem; }
+  .top-bar__icon {
+    display: block; }
   .footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
