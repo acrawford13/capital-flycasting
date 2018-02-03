@@ -2,7 +2,7 @@
 {# {% set clearfix = (page.header.imageClearfix and page.header.sectionImage and page.parent.collection.prevSibling(page.path).header.sectionImage) ? ' content__section--clearfix' : '' %} #}
 {% set clearfix = (page.header.imageClearfix and page.header.sectionImage) ? ' content__section--clearfix' : '' %}
 <div class="content__section {{ page.header.sectionImage ? 'content__section--image' : '' }} {{ clearfix }}">
-    {% if page.header.imageBelowHeader %}<h2 class="page__subheading">{{ page.title }}</h2>{% endif %}
+    {% if page.header.showTitle and page.header.imageBelowHeader %}<h2 class="page__subheading">{{ page.title }}</h2>{% endif %}
     {% if page.header.sectionImage %}
         {% set aspect_ratio = page.media[page.header.sectionImage].height/page.media[page.header.sectionImage].width %}
         {% if aspect_ratio <= 0.75 %}
@@ -21,6 +21,6 @@
             </div>
         </div>
     {% endif %}
-    {% if not page.header.imageBelowHeader %}<h2 class="page__subheading">{{ page.header.title }}</h2>{% endif %}
+    {% if page.header.showTitle and not page.header.imageBelowHeader %}<h2 class="page__subheading">{{ page.header.title }}</h2>{% endif %}
     {{ page.content }}
 </div>

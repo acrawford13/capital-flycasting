@@ -9,6 +9,18 @@ form:
             fields:
                 content:
                     fields:
+                        header.showTitle:
+                            type: toggle
+                            label: Show section title
+                            highlight: 1
+                            default: 1
+                            options:
+                                1: Show
+                                0: Hide
+                            validate:
+                                type: bool
+                            ordering@: header.title
+
                         pageHeader:
                             unset@: true
 
