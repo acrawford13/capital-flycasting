@@ -336,7 +336,7 @@ h2 {
   color: #ddd; }
 
 body {
-  background-image: url("../images/dark_wood_@2X.png");
+  background-image: url("../images/dark_wood.jpg");
   background-color: #330b0b;
   background-size: 400px;
   display: -webkit-box;
@@ -374,8 +374,8 @@ body {
     margin-top: 1rem;
     color: rgba(221, 221, 221, 0.8);
     border-top: 1rem solid transparent;
-    -o-border-image: url("../images/wood.png") 16 repeat;
-       border-image: url("../images/wood.png") 16 repeat;
+    -o-border-image: url("../images/wood.jpg") 16 repeat;
+       border-image: url("../images/wood.jpg") 16 repeat;
     font-size: 0.9rem;
     background-color: white;
     opacity: 0.95; }

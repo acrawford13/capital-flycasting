@@ -468,7 +468,7 @@ h2 {
 }
 
 body {
-    background-image: url('../images/dark_wood_@2X.png');
+    background-image: url('../images/dark_wood.jpg');
     background-color: $background-color;
     background-size: 400px;
     display: flex;
@@ -492,7 +492,7 @@ body {
         margin-top: 1rem;
         color: rgba($body-text-color, 0.8);
         border-top: 1rem solid transparent;
-        border-image: url('../images/wood.png') 16 repeat;
+        border-image: url('../images/wood.jpg') 16 repeat;
         font-size: $footer-text-size;
         background-color: white;
         opacity: 0.95;
