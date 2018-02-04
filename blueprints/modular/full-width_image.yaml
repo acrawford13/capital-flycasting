@@ -1,7 +1,7 @@
 title: Page Section
 '@extends':
-    type: default
-    context: blueprints://pages
+    type: modular/page_section
+    context: blueprints://
 
 form:
     fields:
@@ -9,52 +9,29 @@ form:
             fields:
                 content:
                     fields:
-                        pageHeader:
-                            unset@: true
                         content:
                             unset@: true
 
                         header.showTitle:
-                            type: toggle
-                            label: Show section title
-                            highlight: 1
                             default: 0
-                            options:
-                                1: Show
-                                0: Hide
-                            validate:
-                                type: bool
-                            ordering@: header.title
 
-                        header.media_order:
-                            type: pagemedia
-                            label: PLUGIN_ADMIN.PAGE_MEDIA
+                        sectionImage:
+                            fields:
 
-                        header.sectionImage:
-                            type: pagemediaselect
-                            label: Select an image for this section
-                            preview_images: true
+                                header.imageAlign:
+                                    unset@: true
 
-                        header.imageCaption:
-                            type: text
-                            label: Image caption
+                                header.imageSize:
+                                    unset@: true
 
-                        header.imageClickable:
-                            type: toggle
-                            label: Click image to expand
-                            default: 1
-                            highlight: 1
-                            options:
-                                1: Enabled
-                                0: Disabled
-                            validate:
-                                type: bool
+                                header.imageClearfix:
+                                    unset@: true
 
-                        header.imageRotation:
-                            type: select
-                            label: Image rotation
-                            default: none
-                            options:
-                                none: None
-                                left: 1° left
-                                right: 1° right
+                                header.imageBelowHeader:
+                                    unset@: true
+
+                                header.imageRotation:
+                                    options:
+                                        none: None
+                                        left: 1° left
+                                        right: 1° right
