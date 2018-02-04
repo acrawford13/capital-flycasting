@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Lora:400,400i,700|Pragati+Narrow:400,700");
-@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash");
-@import url("https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps");
-@import url("https://fonts.googleapis.com/css?family=Caveat:400,700");
-@import url("https://fonts.googleapis.com/css?family=Cabin|Libre+Baskerville");
+@import url("https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Caveat:400,700|Cabin");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
