@@ -1,0 +1,25 @@
+title: Course Listing Page
+'@extends':
+    type: default
+    context: blueprints://pages
+
+child_type: course
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        advanced:
+          fields:
+            overrides:
+              fields:
+                header.child_type:
+                  default: course
+        content:
+          fields:
+            header.content.items:
+              type: hidden
+              default: '@self.children'

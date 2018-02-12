@@ -1,0 +1,15 @@
+title: Default Page
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        header.shortDescription:
+                            label: Course Description (Short - for Google)
+                            type: textarea
+                            ordering@: header.title
