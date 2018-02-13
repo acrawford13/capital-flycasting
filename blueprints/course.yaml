@@ -1,4 +1,4 @@
-title: Default Page
+title: Course Page
 '@extends':
     type: default
     context: blueprints://pages
@@ -9,7 +9,38 @@ form:
             fields:
                 content:
                     fields:
-                        header.shortDescription:
-                            label: Course Description (Short - for Google)
-                            type: textarea
-                            ordering@: header.title
+                        content:
+                            ordering@: view
+                            label: Course details
+
+                        listing:
+                            type: section
+                            title: Listing Page
+                            underline: true
+                            fields:
+                                header.description:
+                                    type: markdown
+                                    label: Summary
+                                    validate:
+                                      type: textarea
+
+                        single:
+                            type: section
+                            title: Single Page
+                            underline: true
+
+                            fields:
+                                header.gallery:
+                                    name: gallery
+                                    type: list
+                                    label: Gallery
+                                    style: vertical
+
+                                    fields:
+                                        .title:
+                                            type: text
+                                            label: Image caption
+
+                                        .image:
+                                            type: pagemediaselect
+                                            label: Image

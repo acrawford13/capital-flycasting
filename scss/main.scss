@@ -290,6 +290,8 @@ h2 {
     }
 }
 
+@import './modules/gallery.scss';
+
 .content__section--clearfix,
 .content__section:last-child {
     &::after {

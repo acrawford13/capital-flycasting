@@ -5,7 +5,7 @@
 	{{ page.content }}
     {% for p in page.collection %}
         <h2 class="page__subheading">{{ p.title }}</h2>
-		{{ p.content }}
+		{{ p.description }}
 		<a href="{{ p.url }}">See more</a>
     {% endfor %}
 {% endblock %}

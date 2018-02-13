@@ -1,0 +1,13 @@
+$image-gutter: 0.5rem;
+$image-shadow-size: $image-gutter * 2;
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -$image-gutter;
+
+    &__item {
+        margin: $image-gutter;
+        box-shadow: 0 0 $image-shadow-size black;
+    }
+}

@@ -1,9 +1,26 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-	<h1 class="page__heading">Course: {{ page.title }}</h1>
+	<h1 class="page__heading">{{ page.title }}</h1>
 	{{ page.content }}
 
+    {% if page.header.gallery %}
+    <div class="gallery">
+        {% for item in page.header.gallery %}
+        <div class="gallery__item photo">
+            <img alt="{{ item.title }}" data-src="{{ page.media[item.image].fixOrientation.url }}" src="{{ page.media[item.image].fixOrientation.cropZoom(200,200).url }}" class="photo__image" />
+            {% if item.title %}
+                <span class="photo__caption">{{ item.title }}</span>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="gallery__modal modal">
+        <div class="modal__inner">
+            <img class="modal__image" />
+        </div>
+    </div>
+    {% endif %}
 
     <p class="prev-next">
         {% if not page.isFirst %}

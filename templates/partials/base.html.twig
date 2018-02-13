@@ -89,6 +89,10 @@
                 $('.photo--temp').remove();
             }
 
+            $(document).on('click', '.gallery__item', function(){
+                $('.gallery__modal .modal__image').attr('src', $(this).find('img').attr('data-src'));
+            });
+
             $(document).on('click', '.photo--clickable', function(){
                 closeImage();
                 openImage($(this));
