@@ -442,8 +442,15 @@ h2 {
     justify-content: space-between;
 
     &__button {
+        flex: 1;
+
+        &--prev {
+            margin-right: 0.5rem;
+        }
+        
         &--next {
             text-align: right;
+            margin-left: 0.5rem;
         }
     }
 }

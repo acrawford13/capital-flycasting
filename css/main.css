@@ -441,8 +441,15 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .page-navigation__button--next {
-    text-align: right; }
+  .page-navigation__button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+    .page-navigation__button--prev {
+      margin-right: 0.5rem; }
+    .page-navigation__button--next {
+      text-align: right;
+      margin-left: 0.5rem; }
 
 .excerpt__container {
   font-size: 1.2rem;
