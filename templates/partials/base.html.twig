@@ -96,8 +96,11 @@
                 removeKeyboardListener();
             }
 
-            function showModal(){
-                $('.gallery__modal').css({'display':'flex'});
+            function showModal(element){
+                setModalImage(element);
+                $('.gallery__modal .modal__image').load(function(){
+                    $('.gallery__modal').css({'display':'flex'});
+                });
                 addKeyboardListener();
             }
 
@@ -105,9 +108,11 @@
                 selectedImage = element;
                 var caption = element.find('.photo__caption').html();
                 var imageNum = element.attr('data-index') + "/" + $('.gallery__item').length;
-                $('.gallery__modal .modal__caption').html(caption);
-                $('.gallery__modal .modal__imagenum').html(imageNum);
                 $('.gallery__modal .modal__image').attr('src', element.attr('data-src'));
+                $('.gallery__modal .modal__image').load(function(){
+                    $('.gallery__modal .modal__caption').html(caption);
+                    $('.gallery__modal .modal__imagenum').html(imageNum);
+                });
             }
 
             function nextGalleryImage(){
@@ -156,8 +161,7 @@
             
 
             $(document).on('click', '.gallery__item', function(){
-                setModalImage($(this));
-                showModal();       
+                showModal($(this));
             });
 
             $(document).on('click', '.gallery__modal', function(){
