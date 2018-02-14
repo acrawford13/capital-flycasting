@@ -291,6 +291,9 @@ h2 {
         -ms-flex-pack: justify;
             justify-content: space-between; }
 
+.course-list__item {
+  margin-bottom: 1rem; }
+
 .content__section--clearfix::after,
 .content__section:last-child::after {
   content: '';
