@@ -104,9 +104,10 @@
             function setModalImage(element){
                 selectedImage = element;
                 var caption = element.find('.photo__caption').html();
-                caption += $('.gallery__item').length;
+                var imageNum = element.attr('data-index') + "/" + $('.gallery__item').length;
                 $('.gallery__modal .modal__caption').html(caption);
-                $('.gallery__modal .modal__image').attr('src', element.find('img').attr('data-src'));
+                $('.gallery__modal .modal__imagenum').html(imageNum);
+                $('.gallery__modal .modal__image').attr('src', element.attr('data-src'));
             }
 
             function nextGalleryImage(){

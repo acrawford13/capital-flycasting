@@ -7,8 +7,8 @@
     {% if page.header.gallery %}
     <div class="gallery">
         {% for item in page.header.gallery %}
-        <div class="gallery__item photo">
-            <img alt="{{ item.title }}" data-src="{{ page.media[item.image].fixOrientation.url }}" src="{{ page.media[item.image].fixOrientation.cropZoom(200,200).url }}" class="photo__image" />
+        <div class="gallery__item photo" data-index="{{ loop.index }}" data-src="{{ page.media[item.image].fixOrientation.url }}">
+            <img alt="{{ item.title }}" src="{{ page.media[item.image].fixOrientation.cropZoom(200,200).url }}" class="photo__image" />
             {% if item.title %}
                 <span class="photo__caption">{{ item.title }}</span>
             {% endif %}
@@ -17,8 +17,16 @@
     </div>
     <div class="gallery__modal modal">
         <div class="modal__inner modal__inner--image">
+            <span class="modal__close">&times;</span>
             <img class="modal__image" />
-            <span class="modal__caption caption"></span>
+            <div class="modal__arrows">
+                <span class="modal__arrow modal__arrow--prev">a</span>
+                <span class="modal__arrow modal__arrow--next">b</span>
+            </div>
+            <span class="modal__footer caption">
+                <span class="modal__caption"></span>
+                <span class="modal__imagenum"></span>
+            </span>
         </div>
     </div>
     {% endif %}

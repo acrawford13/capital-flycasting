@@ -219,6 +219,18 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem; }
+  .modal__close {
+    z-index: 1000;
+    overflow: visible;
+    margin-right: 1rem;
+    height: 0;
+    color: white;
+    font-size: 2rem;
+    line-height: 125%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); }
   .modal__inner--image {
     height: 100%;
     display: -webkit-box;
@@ -231,10 +243,14 @@ h2 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
+  .modal__arrow--prev {
+    margin-right: -2rem; }
+  .modal__arrow--next {
+    margin-left: -2rem; }
   .modal__image {
     max-height: calc(90vh - 2rem);
     border: 6px solid white; }
-  .modal__caption {
+  .modal__footer {
     background-color: white;
     color: #222;
     -webkit-box-flex: 0;
@@ -242,7 +258,13 @@ h2 {
             flex: 0 0 auto;
     border: 6px solid white;
     border-top: none;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
 
 .content__section--clearfix::after,
 .content__section:last-child::after {
