@@ -431,6 +431,16 @@ h2 {
   margin-top: -2rem;
   padding-top: 2rem; }
 
+.page-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .page-navigation__button--next {
+    text-align: right; }
+
 .excerpt__container {
   font-size: 1.2rem;
   margin: 0 auto;

@@ -436,6 +436,17 @@ h2 {
     padding-top: 2rem;
 }
 
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+
+    &__button {
+        &--next {
+            text-align: right;
+        }
+    }
+}
+
 .excerpt {
     &__container {
         font-size: 1.2rem;
