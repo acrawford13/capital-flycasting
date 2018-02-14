@@ -41,8 +41,8 @@ h2 {
   margin-bottom: 1rem;
   font-size: 2rem; }
 
-.page__subheading {
-  font-style: italic; }
+.page__subheading a {
+  text-decoration: none; }
 
 .limited-width {
   margin-left: 1rem;

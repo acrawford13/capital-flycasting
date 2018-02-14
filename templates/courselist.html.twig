@@ -24,7 +24,7 @@
 				</div>
 			{% endif %}
 			
-			<h2 class="page__subheading">{{ p.title }}</h2>
+			<h2 class="page__subheading"><a href="{{ p.url }}">{{ p.title }}</a></h2>
 			<p>{{ p.header.description ? p.header.description : p.content }}</p>
 			<a href="{{ p.url }}">Read more&hellip;</a>
 		</div>
