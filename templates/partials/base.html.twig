@@ -89,8 +89,25 @@
                 $('.photo--temp').remove();
             }
 
+            function closeGalleryImage(){
+                $('.gallery__modal').css({'display':'none'});
+            }
+            
+
             $(document).on('click', '.gallery__item', function(){
+                var caption = $(this).find('.photo__caption').html();
+                $('.gallery__modal .modal__caption').html(caption);
+                $('.gallery__modal').css({'display':'flex'});
                 $('.gallery__modal .modal__image').attr('src', $(this).find('img').attr('data-src'));
+                $(document).on('keyup', function(event){
+                    if(event.keyCode === 27){
+                        closeGalleryImage();
+                    }
+                });
+            });
+
+            $(document).on('click', '.gallery__modal', function(){
+                closeGalleryImage();
             });
 
             $(document).on('click', '.photo--clickable', function(){

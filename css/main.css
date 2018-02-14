@@ -30,6 +30,9 @@ h1 {
 h2 {
   margin: 0; }
 
+.caption {
+  font-family: Caveat, script; }
+
 .content {
   color: #ddd; }
 
@@ -198,6 +201,47 @@ h2 {
     margin: 0.5rem;
     -webkit-box-shadow: 0 0 1rem black;
             box-shadow: 0 0 1rem black; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem; }
+  .modal__inner--image {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .modal__image {
+    max-height: calc(90vh - 2rem);
+    border: 6px solid white; }
+  .modal__caption {
+    background-color: white;
+    color: #222;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    border: 6px solid white;
+    border-top: none;
+    font-size: 1.2rem; }
 
 .content__section--clearfix::after,
 .content__section:last-child::after {
