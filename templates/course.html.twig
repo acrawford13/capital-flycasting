@@ -33,11 +33,15 @@
     {% endif %}
 
     <p class="page-navigation">
+        <span class="page-navigation__button page-navigation__button--prev">
         {% if not page.isFirst %}
-            <span class="page-navigation__button page-navigation__button--prev">Previous class:<br/><a class="button" href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} <i class="fa fa-chevron-right"></i></a></span>
+            Previous class:<br/><a class="button" href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} <i class="fa fa-chevron-right"></i></a>
         {% endif %}
+        </span>
+        <span class="page-navigation__button page-navigation__button--next">
         {% if not page.isLast %}
-            <span class="page-navigation__button page-navigation__button--next">Next class:<br/><a class="button" href="{{ page.prevSibling.url }}"><i class="fa fa-chevron-left"></i> {{ page.prevSibling.title }}</a></span>
+            Next class:<br/><a class="button" href="{{ page.prevSibling.url }}"><i class="fa fa-chevron-left"></i> {{ page.prevSibling.title }}</a>
         {% endif %}
+        </span>
     </p>
 {% endblock %}
