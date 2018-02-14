@@ -5,13 +5,16 @@
 	{{ page.content }}
 
     {% if page.header.gallery %}
+    <h2>Gallery</h2>
     <div class="gallery">
         {% for item in page.header.gallery %}
-        <div class="gallery__item photo" data-index="{{ loop.index }}" data-src="{{ page.media[item.image].fixOrientation.url }}">
-            <img alt="{{ item.title }}" src="{{ page.media[item.image].fixOrientation.cropZoom(200,200).url }}" class="photo__image" />
-            {% if item.title %}
-                <span class="photo__caption">{{ item.title }}</span>
-            {% endif %}
+        <div class="gallery__item" data-index="{{ loop.index }}" data-src="{{ page.media[item.image].fixOrientation.url }}">
+            <div class="gallery__photo">
+                <img alt="{{ item.title }}" src="{{ page.media[item.image].fixOrientation.cropZoom(200,200).url }}" class="photo__image" />
+                {% if item.title %}
+                    <span style="display: none" class="photo__caption">{{ item.title }}</span>
+                {% endif %}
+            </div>
         </div>
         {% endfor %}
     </div>

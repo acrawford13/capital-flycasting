@@ -4,11 +4,39 @@ $image-shadow-size: $image-gutter * 2;
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    margin: -$image-gutter;
+    margin-left: -$image-gutter;
+    margin-right: -$image-gutter;
+    align-items: flex-start;
 
     &__item {
-        margin: $image-gutter;
-        box-shadow: 0 0 $image-shadow-size black;
+        padding: $image-gutter;
+        flex: 0 0 33.3333%;
+    }
+    
+    &__photo {
         cursor: pointer;
+
+        img {
+            box-shadow: 0 0 $image-shadow-size rgba(0,0,0,0.25);
+            display: block;
+        }
+    }
+}
+
+// sm
+@media screen and (min-width: 35.5em) {
+    .gallery {
+        &__item {
+            flex-basis: 25%;
+        }
+    }
+}
+
+// md - 48em = 768px
+@media screen and (min-width: 48em) {
+    .gallery {
+        &__item {
+            flex-basis: 16.6667%;
+        }
     }
 }
