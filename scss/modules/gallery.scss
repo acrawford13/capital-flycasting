@@ -9,5 +9,6 @@ $image-shadow-size: $image-gutter * 2;
     &__item {
         margin: $image-gutter;
         box-shadow: 0 0 $image-shadow-size black;
+        cursor: pointer;
     }
 }

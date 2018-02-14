@@ -200,7 +200,8 @@ h2 {
   .gallery__item {
     margin: 0.5rem;
     -webkit-box-shadow: 0 0 1rem black;
-            box-shadow: 0 0 1rem black; }
+            box-shadow: 0 0 1rem black;
+    cursor: pointer; }
 
 .modal {
   position: fixed;

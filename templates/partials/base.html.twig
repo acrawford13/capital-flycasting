@@ -77,6 +77,8 @@
             {{ assets.js('bottom') }}
         {% endblock %}
         <script>
+            var selectedImage = null;
+
             function openImage(imageElement){
                 imageElement.clone().addClass('photo--temp').insertAfter(imageElement.parent());
                 imageElement.addClass('photo--clicked');
@@ -91,19 +93,70 @@
 
             function closeGalleryImage(){
                 $('.gallery__modal').css({'display':'none'});
+                removeKeyboardListener();
+            }
+
+            function showModal(){
+                $('.gallery__modal').css({'display':'flex'});
+                addKeyboardListener();
+            }
+
+            function setModalImage(element){
+                selectedImage = element;
+                var caption = element.find('.photo__caption').html();
+                caption += $('.gallery__item').length;
+                $('.gallery__modal .modal__caption').html(caption);
+                $('.gallery__modal .modal__image').attr('src', element.find('img').attr('data-src'));
+            }
+
+            function nextGalleryImage(){
+                var nextImage = selectedImage.next('.gallery__item');
+                if(nextImage.length === 1){
+                    selectedImage = nextImage;
+                } else {
+                    selectedImage = selectedImage.siblings('.gallery__item').first();
+                }
+                setModalImage(selectedImage);
+            }
+
+            function prevGalleryImage(){
+                var prevImage = selectedImage.prev('.gallery__item');
+                if(prevImage.length === 1){
+                    selectedImage = prevImage;
+                } else {
+                    selectedImage = selectedImage.siblings('.gallery__item').last();
+                }
+                setModalImage(selectedImage);
+            }
+
+            function handleKeyboardInput(event){
+                switch(event.keyCode) {
+                    case 27:
+                        closeGalleryImage();
+                        break;
+                    case 39:
+                        nextGalleryImage();
+                        break;
+                    case 37:
+                        prevGalleryImage();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            function addKeyboardListener(){
+                $(document).on('keyup', handleKeyboardInput);
+            }
+
+            function removeKeyboardListener(){
+                $(document).off('keyup', handleKeyboardInput);
             }
             
 
             $(document).on('click', '.gallery__item', function(){
-                var caption = $(this).find('.photo__caption').html();
-                $('.gallery__modal .modal__caption').html(caption);
-                $('.gallery__modal').css({'display':'flex'});
-                $('.gallery__modal .modal__image').attr('src', $(this).find('img').attr('data-src'));
-                $(document).on('keyup', function(event){
-                    if(event.keyCode === 27){
-                        closeGalleryImage();
-                    }
-                });
+                setModalImage($(this));
+                showModal();       
             });
 
             $(document).on('click', '.gallery__modal', function(){
