@@ -24,6 +24,10 @@ form:
                                     validate:
                                       type: textarea
 
+                                header.image:
+                                    type: pagemediaselect
+                                    label: Image
+
                         single:
                             type: section
                             title: Single Page
@@ -37,10 +41,10 @@ form:
                                     style: vertical
 
                                     fields:
-                                        .title:
-                                            type: text
-                                            label: Image caption
-
                                         .image:
                                             type: pagemediaselect
                                             label: Image
+
+                                        .title:
+                                            type: text
+                                            label: Image caption

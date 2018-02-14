@@ -5,10 +5,28 @@
 	{{ page.content }}
 	<div class="course-list">
 		{% for p in page.collection %}
-		<div class="course-list__item">
+		<div class="course-list__item content__section--clearfix">
+
+			{% if p.header.image %}
+				{% set aspect_ratio = p.media[p.header.image].height/p.media[p.header.image].width %}
+				{% if aspect_ratio <= 0.75 %}
+					{% set orientation = "landscape" %}
+				{% elseif aspect_ratio <= 1.33 %}
+					{% set orientation = "square" %}
+				{% else %}
+					{% set orientation = "portrait" %}
+				{% endif %}
+				<div class="photo photo--right photo--medium photo--rotate- photo--{{ orientation }}">
+					<img alt="{{ p.title }} image" src="{{ p.media[p.header.image].fixOrientation.url }}" class="photo__image photo__image--medium photo__image--{{ orientation }}" />
+					{% if p.header.imageCaption %}
+						<span class="photo__caption"></span>
+					{% endif %}
+				</div>
+			{% endif %}
+			
 			<h2 class="page__subheading">{{ p.title }}</h2>
-			<p>{{ p.header.description }}</p>
-			<a href="{{ p.url }}">See more</a>
+			<p>{{ p.header.description ? p.header.description : p.content }}</p>
+			<a href="{{ p.url }}">Read more&hellip;</a>
 		</div>
     	{% endfor %}
 	</div>
