@@ -2,11 +2,22 @@ $image-gutter: 0.5rem;
 $image-shadow-size: $image-gutter * 2;
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -$image-gutter;
-    margin-right: -$image-gutter;
-    align-items: flex-start;
+    margin-top: 1rem;
+    border-top: 0.5px solid white;
+    padding-top: 1rem;
+
+    &__heading {
+        
+    }
+
+    &__container {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -$image-gutter;
+        margin-right: -$image-gutter;
+        align-items: flex-start;
+    }
 
     &__item {
         padding: $image-gutter;
