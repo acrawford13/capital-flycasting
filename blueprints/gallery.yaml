@@ -2,3 +2,23 @@ title: Default Page
 '@extends':
     type: default
     context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        header.galleryImages:
+                            name: galleryImages
+                            type: list
+                            label: Images
+                            style: vertical
+                            fields:
+                                .image:
+                                    type: pagemediaselect
+                                    label: Image
+                                    preview_images: true
+                                .text:
+                                    type: text
+                                    label: Image caption
