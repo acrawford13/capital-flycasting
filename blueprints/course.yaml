@@ -13,6 +13,11 @@ form:
                             ordering@: view
                             label: Course details
 
+                        header.shortDescription:
+                            label: Course Description (Short - for Google)
+                            type: textarea
+                            ordering@: header.title
+
                         listing:
                             type: section
                             title: Listing Page
@@ -27,24 +32,3 @@ form:
                                 header.image:
                                     type: pagemediaselect
                                     label: Image
-
-                        single:
-                            type: section
-                            title: Single Page
-                            underline: true
-
-                            fields:
-                                header.gallery:
-                                    name: gallery
-                                    type: list
-                                    label: Gallery
-                                    style: vertical
-
-                                    fields:
-                                        .image:
-                                            type: pagemediaselect
-                                            label: Image
-
-                                        .title:
-                                            type: text
-                                            label: Image caption
