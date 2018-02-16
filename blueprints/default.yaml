@@ -12,8 +12,6 @@ form:
 
                         pageHeader:
                             type: section
-                            title: Page Images
-                            underline: true
                             ordering@: 999
 
                             import@:

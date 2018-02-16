@@ -164,8 +164,31 @@
                 showModal($(this));
             });
 
+            $(document).on('click', '.modal__image', function(e){
+                e.stopPropagation();
+                nextGalleryImage();
+            });
+
             $(document).on('click', '.gallery__modal', function(){
                 closeGalleryImage();
+            });
+
+            $(document).on('click', '.modal__caption', function(e){
+                e.stopPropagation();
+            });
+
+            $(document).on('click', '.modal__close', function(){
+                closeGalleryImage();
+            });
+
+            $(document).on('click', '.modal__arrow--next', function(e){
+                e.stopPropagation();
+                nextGalleryImage();
+            });
+
+            $(document).on('click', '.modal__arrow--prev', function(e){
+                e.stopPropagation();
+                prevGalleryImage();
             });
 
             $(document).on('click', '.photo--clickable', function(){

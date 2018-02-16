@@ -1,45 +1,33 @@
 form:
     fields:
-        # header.images:
-        #     type: file
-        #     label: Image Upload
-        #     destination: '@self'
-        #     multiple: true
-        #     accept:
-        #         - 'image/*'
+        headerImage:
+            type: section
+            title: Header Image
+            underline: true
+            fields:
+                header.pageHeader:
+                    type: filepicker
+                    folder: '@self'
+                    label: Select a header image
+                    toggleable: true
+                    preview_images: true
 
-        # spacer:
-        #     type: spacer
-        #     title: Page Header
+                header.pageHeaderSize:
+                    type: select
+                    label: Select header image size
+                    options:
+                        large: Large
+                        small: Small
 
-
-
-
-        # header.media_order:
-        #     type: pagemedia
-        #     label: PLUGIN_ADMIN.PAGE_MEDIA
-
-        header.pageHeader:
-            type: filepicker
-            folder: '@self'
-            label: Select a header image
-            toggleable: true
-            preview_images: true
-
-        header.pageHeaderSize:
-            type: select
-            label: Select header image size
-            options:
-                large: Large
-                small: Small
-
-        spacer2:
-            type: spacer
+        titlebarImage:
+            type: section
             title: Title Bar Image
+            underline: true
 
-        header.topBarImage:
-            type: filepicker
-            folder: '@self'
-            label: Select an image
-            toggleable: true
-            preview_images: true
+            fields:
+                header.topBarImage:
+                    type: filepicker
+                    folder: '@self'
+                    label: Select an image
+                    toggleable: true
+                    preview_images: true
