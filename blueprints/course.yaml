@@ -11,10 +11,14 @@ form:
                     fields:
                         content:
                             ordering@: view
-                            label: Course details
+                            label: Full course details
+
+                        header.image:
+                            type: pagemediaselect
+                            label: Course Image
 
                         header.shortDescription:
-                            label: Course Description (Short - for Google)
+                            label: Short Description (~60 characters - for Google)
                             type: textarea
                             ordering@: header.title
 
@@ -25,10 +29,7 @@ form:
                             fields:
                                 header.description:
                                     type: markdown
-                                    label: Summary
+                                    label: Summary of course (for course listing page)
+                                    toggleable: true
                                     validate:
                                       type: textarea
-
-                                header.image:
-                                    type: pagemediaselect
-                                    label: Image
