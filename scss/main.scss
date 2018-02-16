@@ -190,23 +190,3 @@ body {
         margin: 0 auto;
     }
 }
-
-// sm
-@include breakpoint(sm){
-
-}
-
-// md - 48em = 768px
-@include breakpoint(md){
-
-}
-
-// lg - 64em = 1024px
-@include breakpoint(lg){
-
-}
-
-// xl
-@include breakpoint(xl){
-
-}
