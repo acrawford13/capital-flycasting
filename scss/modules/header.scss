@@ -154,3 +154,28 @@
         }
     }
 }
+
+@include breakpoint(sm){
+    .top-bar {
+        &__menu-item {
+            margin: 0 0.25rem;
+        }
+
+        &__menu-link {
+            padding: 0.25rem 0.75rem;
+        }
+
+        &__icon {
+            display: block;
+        }
+    }
+}
+
+@include breakpoint(container){
+    .top-bar {
+        &__menu-list {
+            justify-content: flex-start;
+            padding-right: $top-bar-icon-width + 24px;
+        }
+    }
+}
