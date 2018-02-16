@@ -157,3 +157,113 @@
         }
     }
 }
+
+@include breakpoint(sm) {
+    .photo {
+        $small: 33%;
+        $medium: 50%;
+        $large: 66%;
+        $divider-portrait: 1.414;
+        $divider-square: 1.25;
+
+        &--small#{&}--landscape {
+            max-width: $small;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--landscape {
+            max-width: $medium;
+        }
+
+        &--large#{&}--landscape {
+            max-width: $large;
+        }
+
+        &--large#{&}--landscape#{&}--right {
+            margin-left: 1.25rem;
+        }
+
+        &--large#{&}--landscape#{&}--left {
+            margin-right: 1.25rem;
+        }
+
+        &--small#{&}--portrait {
+            max-width: $small / $divider-portrait;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--portrait {
+            max-width: $medium / $divider-portrait;
+        }
+
+        &--large#{&}--portrait {
+            max-width: $large / $divider-portrait;
+        }
+
+        &--small#{&}--square {
+            max-width: $small / $divider-square;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--square {
+            max-width: $medium / $divider-square;
+        }
+
+        &--large#{&}--square {
+            max-width: $large / $divider-square;
+        }
+
+        &--full-width &__caption {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@include breakpoint(md){
+    .photo {
+        $small: 25%;
+        $medium: 37.5%;
+        $large: 50%;
+        $divider-portrait: 1.414;
+        $divider-square: 1.25;
+
+        &--small#{&}--landscape {
+            max-width: $small;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--landscape {
+            max-width: $medium;
+        }
+
+        &--large#{&}--landscape {
+            max-width: $large;
+        }
+
+        &--small#{&}--portrait {
+            max-width: $small / $divider-portrait;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--portrait {
+            max-width: $medium / $divider-portrait;
+        }
+
+        &--large#{&}--portrait {
+            max-width: $large / $divider-portrait;
+        }
+
+        &--small#{&}--square {
+            max-width: $small / $divider-square;
+            border-width: 5px;
+        }
+
+        &--medium#{&}--square {
+            max-width: $medium / $divider-square;
+        }
+
+        &--large#{&}--square {
+            max-width: $large / $divider-square;
+        }
+    }
+}
