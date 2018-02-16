@@ -36,6 +36,34 @@ $background-color: #330b0b;
 
 $top-bar-icon-width: 80px;
 
+// BREAKPOINTS
+@mixin breakpoint($class) {
+    @if $class == sm {
+        @media screen and (min-width: 35.5em) { @content; }
+    }
+   
+    @else if $class == md {
+        @media screen and (min-width: 64em) { @content; }
+    }
+   
+    @else if $class == lg {
+        @media screen and (min-width: 48em) { @content; }
+    }
+   
+    @else if $class == xl {
+        @media screen and (min-width: 80em) { @content; }
+    }
+
+    @else if $class == container {
+        @media screen and (min-width: ($container-width + 32px)) { @content; }
+    }
+   
+    @else {
+        @warn "Breakpoint mixin supports: sm, md, lg, xl and container";
+    }
+}
+  
+
 // RULES
 // general rules
 * {
@@ -167,7 +195,7 @@ body {
     }
 }
 
-@media screen and (min-width: ($container-width + 32px)) {
+@include breakpoint(container){
     .limited-width {
         width: $container-width;
         margin: 0 auto;
@@ -182,7 +210,7 @@ body {
 }
 
 // sm
-@media screen and (min-width: 35.5em) {
+@include breakpoint(sm){
     .top-bar {
 
         &__menu-item {
@@ -274,7 +302,7 @@ body {
 }
 
 // md - 48em = 768px
-@media screen and (min-width: 48em) {
+@include breakpoint(md){
     .photo {
         $small: 25%;
         $medium: 37.5%;
@@ -324,11 +352,11 @@ body {
 }
 
 // lg - 64em = 1024px
-@media screen and (min-width: 64em) {
+@include breakpoint(lg){
 
 }
 
 // xl
-@media screen and (min-width: 80em) {
+@include breakpoint(xl){
 
 }
