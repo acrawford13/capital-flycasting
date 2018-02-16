@@ -105,6 +105,7 @@ h2 {
 @import './modules/modal.scss';
 @import './modules/course-list.scss';
 @import './modules/header.scss';
+@import './modules/footer.scss';
 
 .content__section--clearfix,
 .content__section:last-child {
@@ -163,67 +164,6 @@ body {
 
     > * {
         flex: 1 0 auto;
-    }
-}
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0;
-    color: $darkgrey;
-    align-items: center;
-    justify-content: space-between;
-
-    &__wrapper {
-        flex: 0 0 auto;
-        margin-top: 1rem;
-        color: rgba($body-text-color, 0.8);
-        border-top: 1rem solid transparent;
-        border-image: url('../images/wood.jpg') 16 repeat;
-        font-size: $footer-text-size;
-        background-color: white;
-        opacity: 0.95;
-    }
-
-    &__logos {
-        display: inline-flex;
-        justify-content: center;
-        margin-bottom: 1rem;
-        height: 100px;
-
-        &--home {
-            height: 125px;
-        }
-    }
-
-    &__logo {
-        margin-right: 0.5rem;
-        height: 100%;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    &__logo-image {
-        max-height: 100%;
-    }
-
-    &__text {
-        text-align: center;
-
-        > :last-child {
-            margin-bottom: 0;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        a {
-            color: $darkgrey;
-        }
     }
 }
 
