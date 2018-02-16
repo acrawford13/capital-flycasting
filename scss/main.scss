@@ -172,17 +172,6 @@ h2 {
     }
 }
 
-.excerpt {
-    &__container {
-        font-size: 1.2rem;
-        margin: 0 auto;
-        border-bottom: 0.5px solid $body-text-color;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-        color: $body-text-color;
-    }
-}
-
 body {
     background-image: url('../images/dark_wood.jpg');
     background-color: $background-color;
