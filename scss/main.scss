@@ -225,21 +225,6 @@ body {
             display: block;
         }
     }
-
-    .footer {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        &__logos {
-            justify-content: space-between;
-            margin-bottom: 0;
-        }
-
-        &__text {
-            text-align: right;
-        }
-    }
 }
 
 // md - 48em = 768px
