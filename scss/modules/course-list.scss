@@ -1,11 +1,35 @@
 .course-list {
+
     &__item {
-        border-bottom: 0.5px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0 0 10px rgba(0,0,0,0.7);
         margin-bottom: 1rem;
-        padding-bottom: 1rem;
+        background-color: $lightgrey;
+        color: $darkgrey;
+        display: flex;
+        align-items: stretch;
 
         &:last-child {
             border-bottom: none;
         }
+
+        a {
+            color: $darkbrown;
+        }
+    }
+    
+    &__heading a {
+        text-decoration: none;
+    }
+
+    &__text {
+        padding: 1rem;
+        align-self: center;
+    }
+
+    &__image {
+        flex: 0 0 150px;
+        min-height: 150px;
+        background-size: cover;
+        background-position: 50%;
     }
 }
