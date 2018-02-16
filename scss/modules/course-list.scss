@@ -1,5 +1,4 @@
 .course-list {
-
     &__item {
         box-shadow: 0 0 10px rgba(0,0,0,0.7);
         margin-bottom: 1rem;
@@ -7,17 +6,19 @@
         color: $darkgrey;
         display: flex;
         align-items: stretch;
+        cursor: pointer;
 
         &:last-child {
             border-bottom: none;
         }
 
         a {
-            color: $darkbrown;
+            color: $blue;
         }
     }
     
     &__heading a {
+        color: $darkergrey;
         text-decoration: none;
     }
 

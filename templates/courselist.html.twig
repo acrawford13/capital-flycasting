@@ -5,7 +5,7 @@
 	{{ page.content }}
 	<div class="course-list">
 		{% for p in page.collection %}
-		<div class="course-list__item">
+		<div class="course-list__item js-link" data-link={{ p.url }}>
 			{% if p.header.image %}
 				{% set aspect_ratio = p.media[p.header.image].height/p.media[p.header.image].width %}
 				{% if aspect_ratio <= 0.75 %}

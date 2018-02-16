@@ -126,3 +126,9 @@
         closeImage();
     });
 })(jQuery, document);
+
+(function($, document, window){
+    $(document).on('click', '.js-link', (e) => {
+        window.location.href = $(e.currentTarget).attr('data-link');
+    })
+})(jQuery, document, window);
