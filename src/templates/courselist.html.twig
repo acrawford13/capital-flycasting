@@ -21,8 +21,8 @@
 			<div class="course-list__content">
 				<h2 class="course-list__heading"><a href="{{ p.url }}">{{ p.title }}</a></h2>
 				<div class="course-list__text">
-					<p>{{ p.header.description }}</p>
-					<a href="{{ p.url }}">View course details</a>
+					{% if p.header.description %}<p>{{ p.header.description }}</p>{% endif %}
+					<a class="course-list__readmore" href="{{ p.url }}">View course details</a>
 				</div>
 			</div>
 		</div>
