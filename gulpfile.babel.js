@@ -16,10 +16,10 @@ const devSCSS = () => {
 
 const devJS = () => {
     gulp.src('src/js/app.js')
-            .pipe(babel({
-                presets: ['env'],
-            }))
-            .pipe(gulp.dest('js'));
+        .pipe(babel({
+            presets: ['env'],
+        }))
+        .pipe(gulp.dest('js'));
 };
 
 const devTemplates = () => {
@@ -74,9 +74,9 @@ gulp.task('build:dev', ()=>{
 });
 
 gulp.task('build', () => {
-   buildSCSS();
-   buildJS();
-   buildTemplates();
+    buildSCSS();
+    buildJS();
+    buildTemplates();
 });
 
 gulp.task('css:dev', ()=>{
