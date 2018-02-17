@@ -58,7 +58,9 @@
 
         {% block javascripts %}
             {% do assets.addJs('jquery', 101) %}
+            <!-- build:js -->
             {% do assets.addJs('theme://js/app.js', 100) %}
+            <!-- endbuild -->
         {% endblock %}
         {{ assets.js() }}
     </head>
