@@ -1,4 +1,4 @@
-(function($, document) {
+(function ($, document) {
     let selectedImage = null;
 
     function openImage(imageElement){
@@ -29,7 +29,7 @@
     function setModalImage(element){
         selectedImage = element;
         const caption = element.find('.photo__caption').html();
-        const imageNum = element.attr('data-index') + "/" + $('.gallery__item').length;
+        const imageNum = element.attr('data-index') + '/' + $('.gallery__item').length;
         $('.gallery__modal .modal__image').attr('src', element.attr('data-src'));
         $('.gallery__modal .modal__image').load(() => {
             $('.gallery__modal .modal__caption').html(caption);
@@ -43,7 +43,7 @@
             selectedImage = nextImage;
         } else {
             selectedImage = selectedImage.siblings('.gallery__item').first();
-        };
+        }
         setModalImage(selectedImage);
     }
 
@@ -53,23 +53,23 @@
             selectedImage = prevImage;
         } else {
             selectedImage = selectedImage.siblings('.gallery__item').last();
-        };
+        }
         setModalImage(selectedImage);
     }
 
     function handleKeyboardInput(event){
         switch(event.keyCode) {
-            case 27:
-                closeGalleryImage();
-                break;
-            case 39:
-                nextGalleryImage();
-                break;
-            case 37:
-                prevGalleryImage();
-                break;
-            default:
-                break;
+        case 27:
+            closeGalleryImage();
+            break;
+        case 39:
+            nextGalleryImage();
+            break;
+        case 37:
+            prevGalleryImage();
+            break;
+        default:
+            break;
         }
     }
 
@@ -99,7 +99,7 @@
         e.stopPropagation();
     });
 
-    $(document).on('click', '.modal__close', (e) => {
+    $(document).on('click', '.modal__close', () => {
         closeGalleryImage();
     });
 
@@ -113,7 +113,7 @@
         prevGalleryImage();
     });
 
-    $(document).on('click', '.photo--clickable', () => {
+    $(document).on('click', '.photo--clickable', (e) => {
         closeImage();
         openImage($(e.currentTarget));
     });
@@ -130,5 +130,5 @@
 (function($, document){
     $(document).on('click', '.js-link', (e) => {
         location.href = $(e.currentTarget).attr('data-link');
-    })
+    });
 })(jQuery, document);
