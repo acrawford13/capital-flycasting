@@ -1,0 +1,9 @@
+{% if page.header.sectionImage %}
+    <div class="photo-container">
+        {% if page.header.showTitle %}<h2 class="page__subheading">{{ page.title }}</h2>{% endif %}
+        <div class="photo {{ page.header.imageClickable ? 'photo--clickable' : '' }} photo--full-width photo--rotate-{{ page.header.imageRotation }}">
+            <img src="{{ page.media[page.header.sectionImage].fixOrientation.url }}" />
+            <span class="photo__caption">{{ page.header.imageCaption }}</span>
+        </div>
+    </div>
+{% endif %}

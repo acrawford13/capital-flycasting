@@ -1,0 +1,39 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block header %}
+    <header class="header header--homepage">
+        {% include 'partials/header.html.twig' %}
+        <div class="header-image" style="background-image:url('{{ [theme_url,'/images/headers/',site.site_header]|join }}')"></div>
+    </header>
+{% endblock %}
+{% block content %}
+    {% for p in page.collection %}
+    {% set clearfix = (p.header.imageClearfix and p.header.sectionImage and page.collection.prevSibling(p.path).header.sectionImage) ? ' content__section--clearfix' : '' %}
+    <div class="content__section{{ p.header.sectionImage ? ' content__section--image' : '' }}{{ clearfix }}">
+        {% if p.header.sectionImage %}
+            {% set aspect_ratio = p.media[p.header.sectionImage].height/p.media[p.header.sectionImage].width %}
+            {% if aspect_ratio <= 0.75 %}
+                {% set orientation = "landscape" %}
+            {% elseif aspect_ratio <= 1 %}
+                {% set orientation = "square-landscape" %}
+            {% elseif aspect_ratio <= 1.33 %}
+                {% set orientation = "square-portrait" %}
+            {% else %}
+                {% set orientation = "portrait" %}
+            {% endif %}
+            <div class="photo photo--{{ p.header.imageAlign }}">
+                <img src={{ p.media[p.header.sectionImage].fixOrientation.url }} class="photo__image  photo__image--{{ p.header.imageSize }} photo__image--{{ orientation }}" />
+                {% if p.header.imageCaption %}
+                    <span class="photo__caption">{{ p.header.imageCaption }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+        <h2>{{ p.title }}</h2>
+        <p>{{p.content}}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}

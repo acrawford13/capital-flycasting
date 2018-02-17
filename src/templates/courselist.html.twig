@@ -1,0 +1,31 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<h1 class="page__heading">{{ page.title }}</h1>
+	{{ page.content }}
+	<div class="course-list">
+		{% for p in page.collection %}
+		<div class="course-list__item js-link" data-link={{ p.url }}>
+			{% if p.header.image %}
+				{% set aspect_ratio = p.media[p.header.image].height/p.media[p.header.image].width %}
+				{% if aspect_ratio <= 0.75 %}
+					{% set orientation = "landscape" %}
+				{% elseif aspect_ratio <= 1.33 %}
+					{% set orientation = "square" %}
+				{% else %}
+					{% set orientation = "portrait" %}
+				{% endif %}
+				<div class="course-list__image" style="background-image: url('{{ p.media[p.header.image].fixOrientation.url }}')">
+				</div>
+			{% endif %}
+			<div class="course-list__content">
+				<h2 class="course-list__heading"><a href="{{ p.url }}">{{ p.title }}</a></h2>
+				<div class="course-list__text">
+					<p>{{ p.header.description }}</p>
+					<a href="{{ p.url }}">View course details</a>
+				</div>
+			</div>
+		</div>
+    	{% endfor %}
+	</div>
+{% endblock %}

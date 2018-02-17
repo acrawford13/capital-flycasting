@@ -1,0 +1,42 @@
+{% set modified_date = pages.children.visibles|first.modified %}
+{% for page in pages.children.visible %}
+    {% if modified_date < page.modified %}
+        {% set modified_date = page.modified %}
+    {% endif %}
+{% endfor %}
+<footer class="footer__wrapper">
+    {% set footer = page.home ? config.footer.homepageFooter : config.footer.defaultFooter %}
+    {% if footer.logoHeight %}
+    <style>
+        {% if footer.logoHeight.default %}
+        .footer__logos--default {
+            height: {{ footer.logoHeight }}px !important;
+        }
+        {% endif %}
+
+        {% if footer.logoHeight.homepage %}
+        .footer__logos--home {
+            height: {{ footer.logoHeight }}px !important;
+        }
+        {% endif %}
+    </style>
+    {% endif %}
+    <div class="footer limited-width">
+        {% if footer.images %}
+        <div class="footer__logos {{ page.home ? "footer__logos--home" : 'footer__logos--default' }}">
+            {% for logo in footer.images %}
+            {% set logo_aspect = media_directory('theme://images/logos')[logo.image].width/media_directory('theme://images/logos')[logo.image].height %}
+            <div style="flex: {{ logo_aspect }}" class="footer__logo">
+                <img alt="{{ logo.title }}" class="footer__logo-image" src="{{ media_directory('theme://images/logos')[logo.image].url }}" />
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="footer__text">
+            {{ footer.text|markdown }}
+            {% if footer.copyright %}
+                <p class="footer__copyright">&copy; {{ site.author.name }} | {{ modified_date|date('F Y') }}</p>
+            {% endif %}
+        </div>
+    </div>
+</footer>
