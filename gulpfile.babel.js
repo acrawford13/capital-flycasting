@@ -29,8 +29,8 @@ const devTemplates = () => {
 
 const buildSCSS = () => {
     gulp.src('src/scss/main.scss')
-        .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest('css'));
 };
 
