@@ -5,6 +5,14 @@
         background-color: $lightergrey;
         color: $darkgrey;
         cursor: pointer;
+        padding: 1rem;
+        padding-bottom: 0.5rem;
+
+        &::after {
+            clear: both;
+            display: table;
+            content: '';
+        }
 
         &:last-child {
             border-bottom: none;
@@ -20,13 +28,10 @@
         text-decoration: none;
     }
 
-    &__content {
-        padding: 1rem;
-    }
-
     &__readmore {
         display: block;
         text-align: right;
+        margin: 0.5rem 0;
     }
 
     &__image {
@@ -35,7 +40,7 @@
         background-size: cover;
         background-position: 50%;
         float: left;
-        margin: 1rem;
+        margin-right: 1rem;
         margin-bottom: 0.5rem;
     }
 }
@@ -52,17 +57,17 @@
             align-self: center;
             display: flex;
             flex-direction: column;
+            padding: 1rem;
         }
 
         &__item {
             display: flex;
             align-items: stretch;
+            padding: 0;
         }
 
-        &__text {
-            a {
-                display: inline;
-            }
+        &__readmore {
+            text-align: left;
         }
     }
 }
