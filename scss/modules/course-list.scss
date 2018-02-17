@@ -2,10 +2,8 @@
     &__item {
         box-shadow: 0 0 10px rgba(0,0,0,0.7);
         margin-bottom: 1rem;
-        background-color: $lightgrey;
+        background-color: $lightergrey;
         color: $darkgrey;
-        display: flex;
-        align-items: stretch;
         cursor: pointer;
 
         &:last-child {
@@ -22,15 +20,53 @@
         text-decoration: none;
     }
 
-    &__text {
+    &__content {
         padding: 1rem;
-        align-self: center;
+    }
+
+    &__text {
+        clear: both;
+
+        a {
+            display: block;
+            text-align: right;
+        }
     }
 
     &__image {
-        flex: 0 0 150px;
-        min-height: 150px;
+        min-width: 90px;
+        min-height: 90px;
+        float: left;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
         background-size: cover;
         background-position: 50%;
+    }
+}
+
+@include breakpoint(xs) {
+    .course-list {
+        &__image {
+            flex: 0 0 150px;
+            min-height: 150px;
+            margin: 0;
+        }
+
+        &__content {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item {
+            display: flex;
+            align-items: stretch;
+        }
+
+        &__text {
+            a {
+                display: inline;
+            }
+        }
     }
 }
