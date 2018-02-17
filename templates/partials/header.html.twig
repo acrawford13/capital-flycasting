@@ -2,7 +2,7 @@
     <div class="top-bar" style="background-image: url('{{ url('theme://images/wood.jpg') }}')">
         <div class="top-bar__container limited-width">
             <div class="top-bar__site-identity">
-                <span class="top-bar__title">{{ site.title|e }}</span>
+                <a href="{{ home_url }}" class="top-bar__title">{{ site.title|e }}</a>
                 {% if site.subtitle %}<span class="top-bar__subtitle">{{ site.subtitle|e }}</span>{% endif %}
             </div>
             {% if page.header.topBarImage %}
