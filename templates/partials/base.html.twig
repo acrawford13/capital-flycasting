@@ -15,25 +15,35 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% if header.title %}
+        {% if ((site.title in header.title) or (site.subtitle in header.title)) %}
+            {# if the page title contains either the site title or subtitle #}
+            {% if (header.menu and not ((site.title in header.menu) or (site.subtitle in header.menu))) %}
+                {# and if the page has a menu title which doesn't contain the site title or subtitle #}
+                {# use the menu title as the page title #}
+                {% set pageTitle = header.menu|e ~ " | " %}
+            {% else %}
+                {# else use the page title as the full title #}
+                {% set displayTitle = header.title %}
+            {% endif %}
+        {% else %}
             {% set pageTitle = header.title|e ~ " | " %}
         {% endif %}
-        {% set pageTitle = pageTitle ~ site.title|e %}
-        {% if site.subtitle %}
-            {% set pageTitle = pageTitle ~ " - " ~ site.subtitle %}
-        {% endif %}
-        <title>{{ pageTitle }}</title>
+
+        {% set siteTitle = site.subtitle ? site.title|e ~ ' - ' ~ site.subtitle|e : site.title|e %}
+        {% set displayTitle = displayTitle ? displayTitle : pageTitle ~ siteTitle %}
+
+        <title>{{ displayTitle }}</title>
         <link rel="canonical" href="{{ page.url(true, true) }}" />
         <!-- Search Engine -->
         <meta name="description" content="{{ page.summary(null, true) }}">
         <meta name="image" content="{{ page.header.pageHeader ? 'http://www.capitalflycasting.com' ~ page.media[page.header.pageHeader].url : '' }}">
         <!-- Schema.org for Google -->
-        <meta itemprop="name" content="{{ pageTitle }}">
+        <meta itemprop="name" content="{{ displayTitle }}">
         <meta itemprop="description" content="{{ page.summary(null, true) }}">
         <meta itemprop="image" content="{{ page.header.pageHeader ? 'http://www.capitalflycasting.com' ~ page.media[page.header.pageHeader].url : '' }}">
         <!-- Twitter -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="{{ pageTitle }}">
+        <meta name="twitter:title" content="{{ displayTitle }}">
         <meta name="twitter:description" content="{{ page.summary(null, true) }}">
         <!-- Open Graph general (Facebook, Pinterest & Google+) -->
         <meta name="og:title" content="{{ header.title ? header.title : site.title }}">
