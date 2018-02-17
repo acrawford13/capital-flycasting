@@ -4,8 +4,8 @@ import watch from 'gulp-watch';
 import autoprefixer from 'gulp-autoprefixer';
 import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
-import pump from 'pump';
 import htmlreplace from 'gulp-html-replace';
+import rename from 'gulp-rename';
 
 const devSCSS = () => {
     gulp.src('src/scss/main.scss')
@@ -35,30 +35,25 @@ const buildSCSS = () => {
 };
 
 const buildJS = () => {
-    console.log('building javascript');
     gulp.src('src/js/app.js')
         .pipe(babel({
             presets: ['env'],
         }))
         .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('js'));
 };
 
 const buildTemplates = () => {
     gulp.src('src/templates/**/')
-        .pipe(htmlreplace({ js: "{% do assets.addJs('theme://js/app.min.js', 100) %}"}))
+        .pipe(htmlreplace({
+            js: "{% do assets.addJs('theme://js/app.min.js', 100) %}",
+            keepBlockTags: false
+        }))
         .pipe(gulp.dest('templates'));
 };
 
-const buildDevFiles = ()=>{
-    devSCSS();
-    devJS();
-    devTemplates();
-};
-
-gulp.task('watch', ()=>{
-    buildDevFiles();
-
+gulp.task('watch', ['build:dev'], ()=>{
     watch('src/scss/**/*.scss', {verbose: true}, function(){
         devSCSS();
     });
@@ -72,28 +67,16 @@ gulp.task('watch', ()=>{
     });
 });
 
-gulp.task('build:dev', buildDevFiles);
+gulp.task('build:dev', ()=>{
+    devSCSS();
+    devJS();
+    devTemplates();
+});
 
-gulp.task('build:dist', () => {
+gulp.task('build', () => {
    buildSCSS();
    buildJS();
    buildTemplates();
-});
-
-gulp.task('js:build', (cb)=>{
-    pump([
-        gulp.src('src/templates/base.html.twig'),
-        htmlreplace({ js: "{% do assets.addJs('theme://js/app.min.js', 100) %}"}),
-        gulp.dest('templates'),
-
-        gulp.src('src/js/app.js'),
-        babel({
-            presets: ['env']
-        }),
-        uglify(),
-        gulp.dest('js')
-    ],
-    cb);
 });
 
 gulp.task('css:dev', ()=>{
