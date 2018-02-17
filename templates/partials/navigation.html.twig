@@ -1,5 +1,5 @@
 <ul class="top-bar__menu-list">
-    {% for page in pages.children.visible %}
+    {% for page in pages.children.visible if page.routable %}
     {% set current_page = page.active ? 'top-bar__menu-link--active' : '' %}
         <li class="top-bar__menu-item"><a class="top-bar__menu-link {{ current_page }}" href="{{ page.url }}">{{ page.menu }}</a></li>
     {% endfor %}
