@@ -24,31 +24,27 @@
         padding: 1rem;
     }
 
-    &__text {
-        clear: both;
-
-        a {
-            display: block;
-            text-align: right;
-        }
+    &__readmore {
+        display: block;
+        text-align: right;
     }
 
     &__image {
-        min-width: 90px;
         min-height: 90px;
-        float: left;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
+        min-width: 90px;
         background-size: cover;
         background-position: 50%;
+        float: left;
+        margin: 1rem;
+        margin-bottom: 0.5rem;
     }
 }
 
 @include breakpoint(xs) {
     .course-list {
         &__image {
-            flex: 0 0 150px;
-            min-height: 150px;
+            flex: 0 0 125px;
+            min-height: 125px;
             margin: 0;
         }
 
