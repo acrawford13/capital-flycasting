@@ -2,6 +2,8 @@ env:
   browser: true
   es6: true
   jquery: true
+parserOptions:
+  sourceType: module
 extends: 'eslint:recommended'
 rules:
   indent:
@@ -11,7 +13,7 @@ rules:
     - error
     - windows
   quotes:
-    - error
+    - warn
     - single
   semi:
     - error
