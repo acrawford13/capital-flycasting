@@ -31,27 +31,31 @@
 
         {% set siteTitle = site.subtitle ? site.title|e ~ ' - ' ~ site.subtitle|e : site.title|e %}
         {% set displayTitle = displayTitle ? displayTitle : pageTitle ~ siteTitle %}
+        
+        {% set headerImage = page.header.pageHeader ? page.media[page.header.pageHeader] : page.find('/home').media[page.find('/home').header.pageHeader] %}
+        {% set headerImage = 'http://capitalflycasting.com' ~ headerImage.cropResize(1080,1080).url() %}
+
         <title>{{ displayTitle }}</title>
         <link rel="canonical" href="{{ page.url(true)|regex_replace('/^http\\:\\/\\/www\./','http://') }}" />
         <!-- Search Engine -->
         <meta name="description" content="{{ page.summary(null, true) }}">
-        <meta name="image" content="{{ page.header.pageHeader ? 'http://capitalflycasting.com' ~ page.media[page.header.pageHeader].url : '' }}">
+        <meta name="image" content="{{ headerImage }}">
         <!-- Schema.org for Google -->
         <meta itemprop="name" content="{{ displayTitle }}">
         <meta itemprop="description" content="{{ page.summary(null, true) }}">
-        <meta itemprop="image" content="{{ page.header.pageHeader ? 'http://capitalflycasting.com' ~ page.media[page.header.pageHeader].url : '' }}">
+        <meta itemprop="image" content="{{ headerImage }}">
         <!-- Twitter -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="{{ displayTitle }}">
         <meta name="twitter:description" content="{{ page.summary(null, true) }}">
         <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-        <meta name="og:title" content="{{ displayTitle }}">
-        <meta name="og:description" content="{{ page.summary(null, true) }}">
-        <meta name="og:url" content="http://capitalflycasting.com">
-        <meta name="og:site_name" content="{{ siteTitle }}">
-        <meta name="og:locale" content="en_AU">
-        <meta name="og:type" content="website">
-        <meta name="og:image" content="{{ page.header.pageHeader ? 'http://capitalflycasting.com' ~ page.media[page.header.pageHeader].url : '' }}">
+        <meta property="og:title" content="{{ displayTitle }}">
+        <meta property="og:description" content="{{ page.summary(null, true) }}">
+        <meta property="og:url" content="http://capitalflycasting.com">
+        <meta property="og:site_name" content="{{ siteTitle }}">
+        <meta property="og:locale" content="en_AU">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="{{ headerImage }}">
 
         {% block stylesheets %}
             {% do assets.addCss('theme://css/purecss/pure-min.css', 102) %}
