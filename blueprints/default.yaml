@@ -9,7 +9,6 @@ form:
             fields:
                 content:
                     fields:
-
                         pageHeader:
                             type: section
                             ordering@: 999
@@ -17,3 +16,8 @@ form:
                             import@:
                                 type: partials/headerimages
                                 context: blueprints://
+
+                options:
+                    fields:
+                        taxonomies:
+                            unset@: true
