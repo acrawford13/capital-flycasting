@@ -1,8 +1,11 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-	<h1 class="page__heading">{{ page.title }}</h1>
-	{{ page.content }}
+    <div>
+        <h1 class="page__heading">{{ page.title }}</h1>
+        {{ page.content }}
+        <img class="course-page__photo" src="{{ page.media[page.header.image].cropResize(600,600).url }}"></img>
+    </div>
 
     <p class="page-navigation">
         {% if not page.isFirst %}
