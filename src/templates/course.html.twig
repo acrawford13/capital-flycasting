@@ -1,18 +1,18 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    <div>
+    <div class="course-page__content">
         <h1 class="page__heading">{{ page.title }}</h1>
+        {% if page.header.image %}<img class="course-page__photo photo" src="{{ page.media[page.header.image].cropResize(600,600).url }}"></img>{% endif %}
         {{ page.content }}
-        <img class="course-page__photo" src="{{ page.media[page.header.image].cropResize(600,600).url }}"></img>
     </div>
 
-    <p class="page-navigation">
+    <p class="course-page__navigation">
         {% if not page.isFirst %}
-            <span class="page-navigation__button page-navigation__button--prev">Previous class:<br/><a class="button" href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} <i class="fa fa-chevron-right"></i></a></span>
+            <span class="course-page__navigation-button course-page__navigation-button--prev">Previous class:<br/><a class="button" href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} <i class="fa fa-chevron-right"></i></a></span>
         {% endif %}
         {% if not page.isLast %}
-            <span class="page-navigation__button page-navigation__button--next">Next class:<br/><a class="button" href="{{ page.prevSibling.url }}"><i class="fa fa-chevron-left"></i> {{ page.prevSibling.title }}</a></span>
+            <span class="course-page__navigation-button course-page__navigation-button--next">Next class:<br/><a class="button" href="{{ page.prevSibling.url }}"><i class="fa fa-chevron-left"></i> {{ page.prevSibling.title }}</a></span>
         {% endif %}
     </p>
 

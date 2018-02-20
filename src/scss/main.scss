@@ -162,24 +162,6 @@ h2 {
     padding-top: 2rem;
 }
 
-.page-navigation {
-    display: flex;
-    justify-content: space-between;
-
-    &__button {
-        flex: 1;
-
-        &--prev {
-            margin-right: 0.5rem;
-        }
-        
-        &--next {
-            text-align: right;
-            margin-left: 0.5rem;
-        }
-    }
-}
-
 body {
     background-image: url('../images/dark_wood.jpg');
     background-color: $background-color;

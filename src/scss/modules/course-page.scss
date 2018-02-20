@@ -1,6 +1,38 @@
 .course-page {
+    &__content {
+        &::after {
+            display: table;
+            content: '';
+            clear: both;
+        }
+    }
+
     &__photo {
         max-width: 300px;
         max-height: 300px;
+        margin: 0;
+        margin-left: 1rem;
+        float: right;
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        border-top: 0.5px solid rgba(255,255,255,0.5);
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    &__navigation-button {
+        flex: 1;
+
+        &--prev {
+            margin-right: 0.5rem;
+        }
+        
+        &--next {
+            text-align: right;
+            margin-left: 0.5rem;
+        }
     }
 }
