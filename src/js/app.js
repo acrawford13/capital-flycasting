@@ -17,11 +17,7 @@
 
         $('.photo--clickable').each(function(){
             if(!$(this).attr('data-src')){
-                if($(this).find('img')){
-                    $(this).attr('data-src', $(this).find('img').attr('src'));
-                } else {
-                    $(this).attr('data-src', $(this).attr('src'));
-                }
+                $(this).attr('data-src', $(this).find('img').attr('src'));
             }
         });
     });
