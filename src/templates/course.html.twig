@@ -13,10 +13,10 @@
 
     <p class="course-page__navigation">
         {% if not page.isFirst %}
-            <span class="course-page__navigation-button course-page__navigation-button--prev">Previous class:<br/><a class="button" href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} <i class="fa fa-chevron-right"></i></a></span>
+            <span class="course-page__navigation-button course-page__navigation-button--prev">View previous:<br/><a class="button" href="{{ page.nextSibling.url }}">{{ page.nextSibling.title }} <i class="fa fa-chevron-right"></i></a></span>
         {% endif %}
         {% if not page.isLast %}
-            <span class="course-page__navigation-button course-page__navigation-button--next">Next class:<br/><a class="button" href="{{ page.prevSibling.url }}"><i class="fa fa-chevron-left"></i> {{ page.prevSibling.title }}</a></span>
+            <span class="course-page__navigation-button course-page__navigation-button--next">View next:<br/><a class="button" href="{{ page.prevSibling.url }}"><i class="fa fa-chevron-left"></i> {{ page.prevSibling.title }}</a></span>
         {% endif %}
     </p>
 
