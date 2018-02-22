@@ -78,3 +78,13 @@ gulp.task('build', () => {
     buildJS();
     buildTemplates();
 });
+
+gulp.task('build:export', ['build'], ()=> {
+    gulp.src('./js/**', { base: '.' }).pipe(gulp.dest('export'));
+    gulp.src('./css/**', { base: '.' }).pipe(gulp.dest('export'));
+    gulp.src('./images/**', { base: '.' }).pipe(gulp.dest('export'));
+    gulp.src('./blueprints/**', { base: '.' }).pipe(gulp.dest('export'));
+    gulp.src('./templates/**', { base: '.' }).pipe(gulp.dest('export'));
+    gulp.src('blueprints.yaml').pipe(gulp.dest('export'));
+    gulp.src('capitalflycasting.yaml').pipe(gulp.dest('export'));
+});
