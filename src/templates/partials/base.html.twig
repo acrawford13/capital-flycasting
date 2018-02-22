@@ -59,15 +59,7 @@
         <link rel="shortcut icon" type="image/png" href="{{ url('theme://images/favicon.png') }}"/>
 
         {% block stylesheets %}
-            {% do assets.addCss('theme://css/purecss/pure-min.css', 102) %}
             {% do assets.addCss('theme://css/main.css', 100) %}
-
-            {% if (browser.getBrowser == 'msie' and browser.getVersion > 8) or browser.getBrowser != 'msie' %}
-                {% do assets.addCss('theme://css/purecss/grids-responsive-min.css', 101) %}
-            {% endif %}
-            {% if browser.getBrowser == 'msie' and browser.getVersion <= 8 %}
-                {% do assets.addCss('theme://css/purecss/grids-responsive-old-ie-min.css', 101) %}
-            {% endif %}
         {% endblock %}
         {{ assets.css() }}
 

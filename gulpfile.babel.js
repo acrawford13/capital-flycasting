@@ -78,7 +78,3 @@ gulp.task('build', () => {
     buildJS();
     buildTemplates();
 });
-
-gulp.task('css:dev', ()=>{
-    return gulp.src(['grids-responsive*-min.css', 'pure-min.css'], {cwd: 'node_modules/purecss/build/'}).pipe(gulp.dest('css/purecss/'));
-});
