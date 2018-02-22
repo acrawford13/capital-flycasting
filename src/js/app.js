@@ -1,17 +1,30 @@
 (function ($, document) {
     let selectedImage = null;
 
-    function openImage(imageElement){
-        imageElement.clone().addClass('photo--temp').insertAfter(imageElement.parent());
-        imageElement.addClass('photo--clicked');
-        imageElement.parent('.photo-container').addClass('photo-container--clicked');
-    }
+    $(document).ready(function(){
+        if ($('.photo--clickable').length !== 0 && $('.gallery__modal').length === 0){
+            $('body').append(`
+            <div class="gallery__modal modal">
+                <div class="modal__inner modal__inner--image">
+                    <span class="modal__close">&ensp;&times;&ensp;</span>
+                    <img class="modal__image" />
+                    <span class="modal__footer caption">
+                        <span class="modal__caption"></span>
+                    </span>
+                </div>
+            </div>`);
+        }
 
-    function closeImage(){
-        $('.photo--clicked').removeClass('photo--clicked');
-        $('.photo-container--clicked').removeClass('photo-container--clicked');
-        $('.photo--temp').remove();
-    }
+        $('.photo--clickable').each(function(){
+            if(!$(this).attr('data-src')){
+                if($(this).find('img')){
+                    $(this).attr('data-src', $(this).find('img').attr('src'));
+                } else {
+                    $(this).attr('data-src', $(this).attr('src'));
+                }
+            }
+        });
+    });
 
     function closeGalleryImage(){
         $('.gallery__modal').css({'display':'none'});
@@ -30,9 +43,15 @@
         selectedImage = element;
         const caption = element.find('.photo__caption').html();
         const imageNum = element.attr('data-index') + '/' + $('.gallery__item').length;
+        
         $('.gallery__modal .modal__image').attr('src', element.attr('data-src'));
         $('.gallery__modal .modal__image').load(() => {
             $('.gallery__modal .modal__caption').html(caption);
+            if(caption || element.attr('data-index')){
+                $('.gallery__modal .modal__footer').show();
+            } else {
+                $('.gallery__modal .modal__footer').hide();
+            }
             $('.gallery__modal .modal__imagenum').html(imageNum);
         });
     }
@@ -86,9 +105,17 @@
         showModal($(e.currentTarget));
     });
 
+    $(document).on('click', '.photo--clickable', (e) => {
+        showModal($(e.currentTarget));
+    });
+
     $(document).on('click', '.modal__image', (e) => {
-        e.stopPropagation();
-        nextGalleryImage();
+        if($(e.currentTarget).siblings('.modal__arrows').find('.modal__arrow--next').length) {
+            e.stopPropagation();
+            nextGalleryImage();
+        } else {
+            closeGalleryImage();
+        }
     });
 
     $(document).on('click', '.gallery__modal', () => {
@@ -111,19 +138,6 @@
     $(document).on('click', '.modal__arrow--prev', (e) => {
         e.stopPropagation();
         prevGalleryImage();
-    });
-
-    $(document).on('click', '.photo--clickable', (e) => {
-        closeImage();
-        openImage($(e.currentTarget));
-    });
-
-    $(document).on('click', '.photo-container--clicked', () => {
-        closeImage();
-    });
-
-    $(document).on('click', '.photo--clicked', () => {
-        closeImage();
     });
 })(jQuery, document);
 
