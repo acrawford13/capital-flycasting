@@ -12,13 +12,11 @@
         {% else %}
             {% set orientation = "portrait" %}
         {% endif %}
-        <div class="photo-container">
-            <div class="photo {{ page.header.imageClickable ? 'photo--clickable' : '' }} photo--{{ page.header.imageAlign }} photo--rotate-{{ page.header.imageRotation }} photo--{{ page.header.imageSize }} photo--{{ orientation }}">
-                <img alt="{{ page.header.imageCaption }}" src="{{ page.media[page.header.sectionImage].fixOrientation.url }}" class="photo__image  photo__image--{{ page.header.imageSize }} photo__image--{{ orientation }}" />
-                {% if page.header.imageCaption %}
-                    <span class="photo__caption">{{ page.header.imageCaption }}</span>
-                {% endif %}
-            </div>
+        <div class="photo {{ page.header.imageClickable ? 'photo--clickable' : '' }} photo--{{ page.header.imageAlign }} photo--rotate-{{ page.header.imageRotation }} photo--{{ page.header.imageSize }} photo--{{ orientation }}">
+            <img alt="{{ page.header.imageCaption }}" src="{{ page.media[page.header.sectionImage].fixOrientation.url }}" class="photo__image  photo__image--{{ page.header.imageSize }} photo__image--{{ orientation }}" />
+            {% if page.header.imageCaption %}
+                <span class="photo__caption">{{ page.header.imageCaption }}</span>
+            {% endif %}
         </div>
     {% endif %}
     {% if page.header.showTitle and not page.header.imageBelowHeader %}<h2 class="page__subheading">{{ page.header.title }}</h2>{% endif %}
