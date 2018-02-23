@@ -4,8 +4,17 @@
     <div class="course-page__content">
         <h1 class="page__heading">{{ page.title }}</h1>
         {% if page.header.image %}
-        <div class="course-page__photo photo photo--clickable" data-src="{{ page.media[page.header.image].fixOrientation.url }}">
-            <img src="{{ page.media[page.header.image].fixOrientation.cropResize(1280,400).url }}"></img>
+            {% if page.media[page.header.image].height > 400 %}
+                {# if the original image height is more than 400, resize it for the thumbnail & large img #}
+                {% set thumbnail = page.media[page.header.image].fixOrientation.cropResize(1280,400).url %}
+                {% set fullsize = page.media[page.header.image].fixOrientation.cropResize(1920,1080).url %}
+            {% else %}
+                {# else just use the original image size for everything #}
+                {% set thumbnail = page.media[page.header.image].fixOrientation.url %}
+                {% set fullsize = thumbnail %}
+            {% endif %}
+        <div class="course-page__photo photo photo--clickable" data-src="{{ fullsize }}">
+            <img src="{{ thumbnail }}"></img>
         </div>
         {% endif %}
         <div class="course-page__text">{{ page.content }}</div>
