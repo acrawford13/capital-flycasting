@@ -1,5 +1,6 @@
 node_modules
 *.html
+*.xcf
 TODO.md
 css
 export
