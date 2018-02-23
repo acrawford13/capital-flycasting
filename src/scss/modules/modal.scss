@@ -52,20 +52,27 @@ $image-border-width: 6px;
         padding: 2rem;
         cursor: pointer;
         user-select: none;
-
-        &--prev {
-            
-        }
-
-        &--next {
-            
-        }
     }
 
     &__image {
         max-height: calc(90vh - 2rem);
         border: $image-border-width solid white;
         user-select: none;
+        object-fit: contain;
+        background-color: white;
+    }
+
+    &__loading {
+        height: 300px;
+        width: 300px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 50px;
+        }
     }
     
     &__footer {
@@ -77,5 +84,9 @@ $image-border-width: 6px;
         font-size: 1.2rem;
         display: flex;
         justify-content: space-between;
+    }
+
+    &__imagenum {
+        margin-left: 0.5rem;
     }
 }

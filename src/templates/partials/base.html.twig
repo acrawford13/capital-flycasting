@@ -62,6 +62,12 @@
             {% do assets.addCss('theme://css/main.css', 100) %}
         {% endblock %}
         {{ assets.css() }}
+        
+        <script type="text/javascript">
+            var settings = {
+                themeUrl: '{{ theme_url }}'
+            };
+        </script>
 
         {% block javascripts %}
             {% do assets.addJs('jquery', 101) %}
