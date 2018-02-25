@@ -128,6 +128,10 @@ h2 {
     }
 }
 
+#body {
+    position: relative;
+}
+
 
 .limited-width {
     margin-left: 1rem;
@@ -153,8 +157,39 @@ h2 {
 }
 
 .section-rule {
-    border: 0;
-    border-bottom: 1px solid $white;
+    // border: 0;
+    // border-bottom: 1px solid $white;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: calc(50% - 50px);
+    margin-left: 0;
+    
+    &::before {
+        background: url('../images/trout.png');
+        content: '';
+        width: 80px;
+        height: 40px;
+        display: inline-block;
+        background-size: contain;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background-repeat: no-repeat;
+        left: 50%;
+    }
+
+    &::after {
+        content: '';
+        width: calc(50% - 50px);
+        display: inline-block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        right: 0;
+        position: absolute;
+    }
 }
 
 .main {
