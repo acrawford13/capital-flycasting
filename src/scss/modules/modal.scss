@@ -42,6 +42,8 @@ $image-border-width: 6px;
         justify-content: space-between;
         left: 0;
         pointer-events: none;
+        top: 50%;
+        transform: translate(0, -50%);
     }
     
     &__arrow {
