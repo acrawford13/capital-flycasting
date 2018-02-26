@@ -19,6 +19,15 @@ form:
                         large: Large
                         small: Small
 
+                header.backgroundPosition:
+                    type: text
+                    label: Override vertical position of header image
+                    toggleable: true
+                    default: 50%
+                    validate:
+                        pattern: '\d{1,3}%'
+                        message: Please enter a percentage value between 0% and 100%
+
         titlebarImage:
             type: section
             title: Title Bar Image
