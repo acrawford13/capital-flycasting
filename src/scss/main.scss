@@ -190,6 +190,14 @@ hr {
         right: 0;
         position: absolute;
     }
+
+    @supports (-ms-ime-align:auto) {
+        margin-left: calc(-50% - 50px);
+    }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        margin-left: calc(-50% - 50px);
+   }
 }
 
 .main {
