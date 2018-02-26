@@ -130,6 +130,7 @@ h2 {
 
 #body {
     position: relative;
+    flex: 1 0 auto;
 }
 
 
@@ -213,7 +214,7 @@ body {
     flex-direction: column;
 
     > * {
-        flex: 1 0 auto;
+        flex: none;
     }
 }
 
