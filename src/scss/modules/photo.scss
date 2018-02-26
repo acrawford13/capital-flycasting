@@ -51,6 +51,7 @@
 
     &--full-width {
         clear: both;
+        max-width: 100%;
     }
 
     &--full-width#{&}--rotate-left {
