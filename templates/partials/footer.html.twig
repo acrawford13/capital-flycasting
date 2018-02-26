@@ -26,7 +26,7 @@
         <div class="footer__logos {{ page.home ? "footer__logos--home" : 'footer__logos--default' }}">
             {% for logo in footer.images %}
             {% set logo_aspect = media_directory('theme://images/logos')[logo.image].width/media_directory('theme://images/logos')[logo.image].height %}
-            <div style="flex: {{ logo_aspect }}" class="footer__logo">
+            <div style="flex-grow: {{ logo_aspect }}" class="footer__logo">
                 <img alt="{{ logo.title }}" class="footer__logo-image" src="{{ media_directory('theme://images/logos')[logo.image].url }}" />
             </div>
             {% endfor %}
