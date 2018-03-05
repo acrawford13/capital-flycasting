@@ -30,6 +30,10 @@ $header-padding: 1rem 0 0 0;
 $header-color: rgba(0, 0, 0, 0);
 $header-title-size: 3.5rem;
 
+// background images
+$dark-wood-background: url('../images/dark_wood.jpg');
+$wood-background: url('../images/wood.jpg');
+
 // footer variables
 $footer-text-size: $small-text;
 
@@ -157,11 +161,6 @@ h2 {
     }
 }
 
-.section-rule {
-    // border: 0;
-    // border-bottom: 1px solid $white;
-}
-
 hr {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -207,7 +206,7 @@ hr {
 }
 
 body {
-    background-image: url('../images/dark_wood.jpg');
+    background-image: $dark-wood-background ;
     background-color: $background-color;
     background-size: 400px;
     display: flex;
