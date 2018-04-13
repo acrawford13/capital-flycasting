@@ -1,12 +1,17 @@
 .logo-container {
-    display: flex;
+    // display: flex;
     padding: 0.5rem;
-    flex-direction: row-reverse;
-    align-items: center;
+    margin: 0.5rem;
+    // flex-direction: row-reverse;
+    // align-items: center;
+    text-align: center;
+    // max-width: 200px;
     border-bottom: 0.5px solid $lightishgrey;
 
     &__logo {
         width: 125px;
+        display: inline-block;
+        padding-bottom: 1rem;
     }
 
     &__subtitle {
@@ -21,6 +26,8 @@
         margin: 0;
         margin-left: 1rem;
         margin-right: 1rem;
+        font-size: 0.8rem;
+        color: black;
     }
 }
 
@@ -64,9 +71,9 @@
 
 @include breakpoint(sm){
     .logo-container {
-        &:last-child {
-            border: none;
-        }
+        border: none;
+        max-width: 200px;
+        margin: 0;
     }
     
     .footer {
@@ -77,7 +84,7 @@
         &__right {
             margin-left: 1rem;
             display: flex;
-            flex-direction: column;
+            align-items: flex-end;
         }
 
         &__left {
