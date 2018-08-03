@@ -1,0 +1,37 @@
+.header-overlay {
+    &__wrapper {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__box {
+        padding: 1.5rem;
+        background-color: $white;
+        box-shadow: 0 0 50px black;
+        padding-right: 2rem;
+        max-width: 100%;
+
+        > :last-child {
+            margin-bottom: 0;
+        }
+
+        > :first-child {
+            margin-top: 0;
+        }
+        
+        @include breakpoint(lg){
+            max-width: 50%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 0;
+    }
+
+    &__subtitle {
+        margin-top: 0.25rem;
+    }
+}

@@ -19,6 +19,10 @@
         </div>
     </div>
     {% if page.header.pageHeader %}
-        <div class="header-image header-image--{{ page.header.pageHeaderSize }}" style="background-image:url('{{ page.media[page.header.pageHeader].cropResize(1920,1920).quality(100).url }}'); {{ page.header.backgroundPosition ? 'background-position: 50% ' ~ (50 + page.header.backgroundPosition|number_format(2)) ~ '%' : '' }}"></div>
+        <div class="header-image header-image--{{ page.header.pageHeaderSize }}" style="background-image:url('{{ page.media[page.header.pageHeader].cropResize(1920,1920).quality(100).url }}'); {{ page.header.backgroundPosition ? 'background-position: 50% ' ~ (50 + page.header.backgroundPosition|number_format(2)) ~ '%' : '' }}">
+            {% if page.home() %}
+                {% include 'partials/header-overlay.html.twig' %}
+            {% endif %}
+        </div>
     {% endif %}
 </header>
