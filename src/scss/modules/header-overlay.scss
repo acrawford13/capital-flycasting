@@ -5,6 +5,14 @@
         width: 100%;
         display: flex;
         align-items: flex-end;
+
+        &--top {
+            align-items: flex-start;
+        }
+
+        &--middle {
+            align-items: center;
+        }
     }
 
     &__box {

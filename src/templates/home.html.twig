@@ -1,0 +1,8 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+    <h1 class="page__heading">{{ page.title }}</h1>
+    {% for p in page.collection %}
+    {% set clearfix = (p.header.imageClearfix and p.header.sectionImage and page.collection.prevSibling(p.path).header.sectionImage) ? ' content__section--clearfix' : '' %}
+        {{ p.content }}
+    {% endfor %}
+{% endblock %}

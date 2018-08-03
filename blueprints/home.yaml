@@ -1,0 +1,40 @@
+title: Modular Page
+'@extends':
+    type: modular
+    context: blueprints://pages
+
+form:
+    fields:
+        tabs:
+            fields:
+                content:
+                    fields:
+                        header.media_order:
+                            type: pagemedia
+                            ordering@: header.content.order.dir
+
+                        homepage_ad:
+                            type: section
+                            title: Homepage Ad
+                            underline: true
+                            fields:
+                                header.adHeadline:
+                                    type: text
+                                    label: Headline
+
+                                header.adSubheading:
+                                    type: text
+                                    label: Subheading
+
+                                header.adText:
+                                    type: markdown
+                                    label: Text
+
+                                header.adVerticalAlign:
+                                    type: select
+                                    label: Vertical alignment
+                                    options:
+                                        top: Top
+                                        middle: Middle
+                                        bottom: Bottom
+                                    default: bottom
