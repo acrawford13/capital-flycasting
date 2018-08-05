@@ -1,13 +1,22 @@
-<div class="header-overlay__wrapper header-overlay__wrapper--{{page.header.adVerticalAlign}} limited-width">
-    <div class="header-overlay__box">
-        {% if page.header.adHeadline %}
-            <h2 class="header-overlay__title">{{page.header.adHeadline}}</h2>
-        {% endif %}
-        {% if page.header.adSubheading %}
-            <h3 class="header-overlay__subtitle">{{page.header.adSubheading}}</h3>
-        {% endif %}
-        {% if page.header.adText %}
-            <p class="header-overlay__text">{{page.header.adText|markdown}}</p>
-        {% endif %}
+{% if page.header.adHeadline or page.header.adSubheading or page.header.adText %}
+    <div class="header-overlay__wrapper header-overlay__wrapper--{{page.header.adVerticalAlign}} limited-width">
+        <div data-target={{ page.header.adExternalLink ? '_blank' : ''}} data-link={{ page.header.adExternalLink ? page.header.adExternalLink : url(page.header.adLink) }} class="{{ page.header.adLink or page.header.adExternalLink ? 'js-link' : ''}} header-overlay__box header-overlay__box--{{ page.header.adBackground }}">
+            <div class="header-overlay__text-container">
+            {% if page.header.adHeadline %}
+                <h2 class="header-overlay__title">{{page.header.adHeadline}}</h2>
+            {% endif %}
+            {% if page.header.adSubheading %}
+                <h3 class="header-overlay__subtitle">{{page.header.adSubheading}}</h3>
+            {% endif %}
+            {% if page.header.adText %}
+                <div class="header-overlay__text">{{page.header.adText|markdown}}</div>
+            {% endif %}
+            </div>
+            {% if page.header.adImage %}
+            <div class="header-overlay__image {{ page.header.adImage ? 'header-overlay__image--right' : '' }}">
+                <img src={{ page.media[page.header.adImage].fixOrientation.cropResize(800, 300).url}} />
+            </div>
+            {% endif %}
+        </div>
     </div>
-</div>
+{% endif %}

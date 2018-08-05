@@ -1,6 +1,4 @@
 .header {
-    display: flex;
-    flex-direction: column;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -11,17 +9,17 @@
 .header-image {
     background-size: cover;
     background-position: 50% 50%;
-    max-height: 50vw;
     display: flex;
+    height: 100%;
 
     &--small {
         flex: 0 1 30vh;
-        min-height: 200px;
+        min-height: 30vh;
     }
 
     &--large {
         flex: 0 1 70vh;
-        min-height: 300px;
+        min-height: 70vh;
     }
 }
 

@@ -160,6 +160,6 @@
 
 (function($, document){
     $(document).on('click', '.js-link', (e) => {
-        location.href = $(e.currentTarget).attr('data-link');
+        window.open($(e.currentTarget).data('link'), $(e.currentTarget).data('target'));
     });
 })(jQuery, document);

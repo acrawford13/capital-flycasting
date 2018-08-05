@@ -26,9 +26,33 @@ form:
                                     type: text
                                     label: Subheading
 
+                                header.adImage:
+                                    type: pagemediaselect
+                                    label: Choose ad image
+                                    preview_images: true
+
                                 header.adText:
                                     type: markdown
                                     label: Text
+
+                                header.adLink:
+                                    type: pages
+                                    label: Link to page
+                                    toggleable: true
+
+                                header.adExternalLink:
+                                    type: text
+                                    label: Link to external website
+                                    toggleable: true
+
+                                header.adBackground:
+                                    type: select
+                                    label: Ad background
+                                    options:
+                                        white: White
+                                        wood: Wood
+                                        dark-wood: Dark wood
+                                    default: white
 
                                 header.adVerticalAlign:
                                     type: select
