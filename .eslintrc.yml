@@ -9,12 +9,11 @@ rules:
   indent:
     - error
     - 4
-  linebreak-style:
-    - error
-    - windows
   quotes:
     - warn
     - single
   semi:
     - error
     - always
+globals:
+  process: readonly
