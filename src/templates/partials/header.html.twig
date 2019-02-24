@@ -1,4 +1,4 @@
-<header class="header header--{{ page.header.pageHeader ? page.header.pageHeaderSize : '' }}">
+<header class="header {{ page.home() ? 'header--home' : '' }} header--{{ page.header.pageHeader ? page.header.pageHeaderSize : '' }}">
     <div class="top-bar" style="background-image: url('{{ url('theme://images/wood.jpg') }}')">
         <div class="top-bar__container limited-width">
             <div class="top-bar__site-identity">

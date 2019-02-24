@@ -1,3 +1,9 @@
+$header-sizes: (
+    small: 50vh,
+    large: 70vh,
+    home: 85vh,
+);
+
 .header {
     background-size: cover;
     background-position: center;
@@ -6,6 +12,12 @@
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
+
+    @each $label, $height in $header-sizes {
+      &--#{$label} {
+        height: $height;
+      }
+    }
 }
 
 .header-image {
@@ -13,16 +25,7 @@
     background-position: 50% 50%;
     display: flex;
     height: 100%;
-
-    &--small {
-        flex: 0 1 30vh;
-        min-height: 30vh;
-    }
-
-    &--large {
-        flex: 0 1 70vh;
-        min-height: 70vh;
-    }
+    flex: 0 1 auto;
 }
 
 .top-bar {
