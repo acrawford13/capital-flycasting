@@ -21,8 +21,7 @@ To make a new Grav project to test this theme:
 php -S localhost:9000 system/router.php
 ``````
 
-Create a new folder in that project `/user/themes/capitalflycasting`, and copy everything from the `export` folder into it
-
+- Create a new folder in that project `/user/themes/capitalflycasting`, and copy everything from the `export` folder into it
 - Download `user/config/system.yaml` from Capital Flycasting site (this is important for the theme, and for some old configuration that makes the theme work)
 - Download some page content from Capital Flycasting site
 - You should see the site as expected
