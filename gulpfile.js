@@ -9,7 +9,7 @@ const uglify = require('gulp-uglify');
 const htmlreplace = require('gulp-html-replace');
 const rename = require('gulp-rename');
 
-const basePath = '/var/www/html/capital-flycasting/user/themes/capital-flycasting/';
+const basePath = './';
 
 function devSCSS(cb) {
     src('src/scss/main.scss')
@@ -68,10 +68,7 @@ function buildTemplates(cb) {
     cb();
 }
 
-function buildDev(cb) {
-    series(devSCSS, devJS, devTemplates);
-    cb();
-}
+const buildDev = series(devSCSS, devJS, devTemplates);
 
 function devBuildTasks(cb) {
     watch('src/scss/**/*.scss', devSCSS);
@@ -80,10 +77,7 @@ function devBuildTasks(cb) {
     cb();
 }
 
-function build(cb) {
-    series(buildSCSS, buildJS, buildTemplates);
-    cb();
-}
+const build = series(buildSCSS, buildJS, buildTemplates);
 
 function buildExport(cb) {
     src('./js/**', { base: '.' }).pipe(dest(`${basePath}export`));
