@@ -17,7 +17,7 @@
             <img src="{{ thumbnail }}"></img>
         </div>
         {% endif %}
-        <div class="course-page__text">{{ page.content }}</div>
+        <div class="course-page__text">{{ page.content|raw }}</div>
     </div>
 
     <p class="course-page__navigation">

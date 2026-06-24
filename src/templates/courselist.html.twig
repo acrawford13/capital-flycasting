@@ -2,7 +2,7 @@
 
 {% block content %}
 	<h1 class="page__heading">{{ page.title }}</h1>
-	{{ page.content }}
+	{{ page.content|raw }}
 	<div class="course-list">
 		{% for p in page.collection %}
 		<div class="course-list__item js-link" data-link={{ p.url }}>

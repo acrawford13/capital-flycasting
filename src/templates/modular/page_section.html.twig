@@ -20,5 +20,5 @@
         </div>
     {% endif %}
     {% if page.header.showTitle and not page.header.imageBelowHeader %}<h2 class="page__subheading">{{ page.header.title }}</h2>{% endif %}
-    {{ page.content }}
+    {{ page.content|raw }}
 </div>

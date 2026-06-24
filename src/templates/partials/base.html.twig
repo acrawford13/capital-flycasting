@@ -61,7 +61,7 @@
         {% block stylesheets %}
             {% do assets.addCss('theme://css/main.css', 100) %}
         {% endblock %}
-        {{ assets.css() }}
+        {{ assets.css()|raw }}
         
         <script type="text/javascript">
             var settings = {
@@ -75,7 +75,7 @@
             {% do assets.addJs('theme://js/app.js', 100) %}
             <!-- endbuild -->
         {% endblock %}
-        {{ assets.js() }}
+        {{ assets.js()|raw }}
     </head>
     <body>
         {% block header %}
@@ -90,7 +90,7 @@
 
 
         {% block bottom %}
-            {{ assets.js('bottom') }}
+            {{ assets.js('bottom')|raw }}
         {% endblock %}
     </body>
 </html>
